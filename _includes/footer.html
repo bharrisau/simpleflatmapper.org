@@ -1,0 +1,28 @@
+<footer class="site-footer">
+
+    <div class="wrapper">
+
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="contact-list">
+                    <li>Contact</li>
+                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-2">
+                <ul class="social-media-list">
+                    <a href="https://github.com/arnaudroger/SimpleFlatMapper"><span class="icon icon--github">{% include icon-github.svg %}</span><span class="username">arnaudroger/SimpleFlatMapper</span></a>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-col-3">
+                <p>{{ site.description | escape }}</p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+{% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+{% endif %}
