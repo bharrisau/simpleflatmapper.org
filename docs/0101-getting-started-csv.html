@@ -114,52 +114,86 @@
 
 <h1 id="reading-a-csv-file">Reading a csv file</h1>
 
-<p>The CsvParser api allows you to read from a File, a Reader or a CharSequence
+<p>The <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-csv/3.0/index.html?org/simpleflatmapper/csv/CsvParser.html">CsvParser</a> api allows you to read from a File, a Reader or a CharSequence
 via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.0/index.html?org/simpleflatmapper/util/RowHandler.html">RowHandler</a> callback, 
 a Iterator or a Stream of String[]</p>
 
+<p><a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/samples/GettingStartedCsv_csvParser.java">Source</a></p>
+
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Callback</span>
 <span class="n">CsvParser</span>
-    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">consumer</span><span class="o">);</span>
-    
+        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">row</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">row</span><span class="o">)));</span>
+
 <span class="c1">// Iterator</span>
 <span class="k">try</span> <span class="o">(</span><span class="n">CloseableIterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">CsvParser</span><span class="o">.</span><span class="na">iterator</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
     <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
-        <span class="n">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">()));</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="c1">// Stream</span>
 <span class="k">try</span> <span class="o">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">CsvParser</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">consumer</span><span class="o">);</span>
+    <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">row</span><span class="o">)));</span>
 <span class="o">}</span></code></pre></figure>
 
 <h1 id="mapping-a-csv-to-an-object">Mapping a csv to an object</h1>
 
 <p>You can also ask the row to be map to an object. You can then read the csv from a File, a Reader 
 or a CharSequence via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.0/index.html?org/simpleflatmapper/util/RowHandler.html">RowHandler</a> callback, 
-a Iterator or a Stream of your type.</p>
+a Iterator or a Stream of your type.
+The mapper will use the header row - the first one - to match against the property of the object. You can also specify the headers
+manually if there none or if you want to skip them.</p>
+
+<p><a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/samples/GettingStartedCsv_csvMapper.java">Source</a></p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Callback</span>
 <span class="n">CsvParser</span>
-    <span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">consumer</span><span class="o">);</span>
-    
+        <span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+
 <span class="c1">// Iterator</span>
-<span class="k">try</span> <span class="o">(</span><span class="n">CloseableIterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">it</span> <span class="o">=</span> 
-        <span class="n">CsvParser</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">iterator</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+<span class="k">try</span> <span class="o">(</span><span class="n">CloseableIterator</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">it</span> <span class="o">=</span>
+             <span class="n">CsvParser</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">iterator</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
     <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
-        <span class="n">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>
     <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="c1">// Stream</span>
-<span class="k">try</span> <span class="o">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">stream</span> <span class="o">=</span> 
-        <span class="n">CsvParser</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">stream</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">consumer</span><span class="o">);</span>
-<span class="o">}</span></code></pre></figure>
+<span class="k">try</span> <span class="o">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span>
+             <span class="n">CsvParser</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">stream</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+<span class="o">}</span>
+
+<span class="c1">// override headers</span>
+<span class="n">CsvParser</span>
+        <span class="o">.</span><span class="na">skip</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">headers</span><span class="o">(</span><span class="s">"id"</span><span class="o">,</span> <span class="s">"email"</span><span class="o">,</span> <span class="s">"name"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span></code></pre></figure>
 
 <h1 id="writing-a-csv-from-an-object">Writing a csv from an object</h1>
+
+<p>The <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-csv/3.0/index.html?org/simpleflatmapper/csv/CsvWriter.html">CsvWriter</a> allows you to create append object to an <a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Appendable.html">Appendable</a>.
+If no headers are specified it will generate a list of headers from the properties of the object. Though it is
+better to specify the headers manually.</p>
+
+<p><a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/samples/GettingStartedCsv_csvWriter.java">Source</a></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// better to cache the dsl with the from </span>
+<span class="c1">// to avoid recomputing the object metadata</span>
+<span class="n">CsvWriter</span><span class="o">.</span><span class="na">CsvWriterDSL</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">writerDsl</span> <span class="o">=</span>
+    <span class="n">CsvWriter</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">columns</span><span class="o">(</span><span class="s">"id"</span> <span class="o">,</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"email"</span><span class="o">);</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">writeCsv</span><span class="o">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">objects</span><span class="o">,</span> <span class="n">File</span> <span class="n">file</span><span class="o">)</span> 
+                                                <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">(</span><span class="n">FileWriter</span> <span class="n">fileWriter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileWriter</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">CsvWriter</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">writer</span><span class="o">=</span>
+                <span class="n">writerDsl</span><span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="n">fileWriter</span><span class="o">);</span>
+        <span class="n">objects</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">CheckedConsumer</span><span class="o">.</span><span class="na">toConsumer</span><span class="o">(</span><span class="nl">writer:</span><span class="o">:</span><span class="n">append</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
 
       </div>
     </main>
