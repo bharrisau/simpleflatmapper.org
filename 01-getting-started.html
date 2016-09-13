@@ -2,12 +2,15 @@
 layout: default
 title: Getting Started
 ---
-
-# JDBC
-
-# CSV
-
-# POI
-
-
-
+<div class="home">
+    <h2>Getting started :</h2>
+    <ul>
+    {% for my_page in site.pages %}
+    {% if my_page.category == 'getting_started' %}
+        <li>
+            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.short_title | escape }}</a>
+        </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+</div>

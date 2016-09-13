@@ -2,9 +2,62 @@
 layout: default
 ---
 
-<div class="home">
+SimpleFlatMapper provides a very fast and easy to use mapper for
 
-  <h1 class="page-heading">Home</h1>
+ * [Jdbc, aka micro ORM](0102-getting-started-jdbc.html)
+ * [Csv](0101-getting-started-csv.html), [Excel spreadsheet](0105-getting-started-poi.html)
+ * [Cassandra Datastax](0103-getting-started-datastax.html)
+ 
+It integrates with 
+ * [jOOQ](0106-getting-started-jooq.html)
+ * [Spring Jdbc](0104-getting-started-springjdbc.html)
+ * [Sql2o](0108-getting-started-sql2o.html)
+ * [QueryDSL](0107getting-started-querydsl.html)
+ 
+The mapper supports 
+ * [Constructor injection]()
+ * [Setter injection]()
+ * [Field injection]()
+ * [Builder pattern]() - like [Immutables]() -
+ * [Deep object structure]()
+ * [Tuples]() including [jOOL]() and [Fasttuple]()
+ * [List, Array and Map]()
+ 
+No annotation, no configuration needed. 
+Default behavior can be changed programmatically.
+You can also extends the type mapping by providing [converters]()
+
+The csv module also provides one of the [fastest java csv parser]().
+
+It can all run on java 6, 7, 8 and 9.
+
+Some sample code :
+
+# Jdbc
+{% highlight java %}
+JdbcMapper<MyObject> mapper =
+    JdbcMapperFactory.newInstance().newMapper(MyObject.class);
+
+public void findAll(Consumer<MyObject> consumer) throws SQLException {
+    try (Connection conn = getConnection();
+        PreparedStatement ps = 
+            conn.prepareStatement("select * from my_table");
+        ResultSet rs = ps.executeQuery();) {
+        return mapper.forEach(rs, consumer);
+    }
+}
+{% endhighlight %}
+
+# Csv
+{% highlight java %}
+CsvParser
+    .mapTo(MyObject.class)
+    .stream(reader)
+    .forEach(System.out::println);
+{% endhighlight %}
 
 
-</div>
+
+
+
+ 

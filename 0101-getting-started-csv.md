@@ -3,32 +3,61 @@ layout: default
 title: Getting Started Csv
 short_title: Csv
 category: getting_started
+module: csv
 ---
 
-# [Maven dependency](http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-csv%7C{% include currentversion.html %}%7C)
+{% include maven_dependency.md %}
 
-## Java 8
-{% highlight xml %}
-<dependency>
-    <groupId>org.simpleflatmapper</groupId>
-    <artifactId>sfm-csv</artifactId>
-    <version>{% include currentversion.html %}</version>
-</dependency>
+# Reading a csv file
+
+The CsvParser api allows you to read from a File, a Reader or a CharSequence
+via a [RowHandler](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/RowHandler.html) callback, 
+a Iterator or a Stream of String[]
+
+{% highlight java%}
+// Callback
+CsvParser
+    .forEach(file, consumer);
+    
+// Iterator
+try (CloseableIterator<String[]> it = CsvParser.iterator(file)) {
+    while(it.hasNext()) {
+        consumer.consumer(it.next());
+    }
+}
+
+// Stream
+try (Stream<String[]> stream = CsvParser.stream(file)) {
+    stream.forEach(consumer);
+}
 {% endhighlight %}
 
-## Java 6, 7
+# Mapping a csv to an object
 
-{% highlight xml %}
-<dependency>
-    <groupId>org.simpleflatmapper</groupId>
-    <artifactId>sfm-csv</artifactId>
-    <version>{% include currentversion.html %}</version>
-    <classifier>jdk16</classifier>
-</dependency>
+You can also ask the row to be map to an object. You can then read the csv from a File, a Reader 
+or a CharSequence via a [RowHandler](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/RowHandler.html) callback, 
+a Iterator or a Stream of your type.
+
+{% highlight java%}
+// Callback
+CsvParser
+    .mapTo(MyObject.class)
+    .forEach(file, consumer);
+    
+// Iterator
+try (CloseableIterator<String[]> it = 
+        CsvParser.mapTo(MyObject.class).iterator(file)) {
+    while(it.hasNext()) {
+        consumer.consumer(it.next());
+    }
+}
+
+// Stream
+try (Stream<String[]> stream = 
+        CsvParser.mapTo(MyObject.class).stream(file)) {
+    stream.forEach(consumer);
+}
 {% endhighlight %}
 
-# CsvParser
 
-# CsvMapper
-
-# CsvWriter 
+# Writing a csv from an object
