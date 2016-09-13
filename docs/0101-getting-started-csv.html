@@ -39,35 +39,19 @@
                 
                 
                 
-                <a class="page-link" href="/0101-getting-started-csv.html">Getting Started Csv</a>
                 
                 
                 
-                <a class="page-link" href="/0102-getting-started-jdbc.html">Getting Started Jdbc</a>
                 
                 
                 
-                <a class="page-link" href="/0103-getting-started-datastax.html">Getting Started Cassandra Datastax</a>
                 
                 
                 
-                <a class="page-link" href="/0104-getting-started-springjdbc.html">Getting Started Jdbc</a>
                 
                 
                 
-                <a class="page-link" href="/0105-getting-started-poi.html">Getting Started Excel spreadsheet</a>
                 
-                
-                
-                <a class="page-link" href="/0106-getting-started-jooq.html">Getting Started jOOQ</a>
-                
-                
-                
-                <a class="page-link" href="/0107-getting-started-querydsl.html">Getting Started Jdbc</a>
-                
-                
-                
-                <a class="page-link" href="/0108-getting-started-sql2o.html">Getting Started Jdbc</a>
                 
                 
                 
@@ -105,14 +89,18 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h1 id="maven-dependencyhttpsearchmavenorgartifactdetails7corgsimpleflatmapper7csfm-csv7c7c"><a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-csv%7C%7C">Maven dependency</a></h1>
+        <h1 id="setting-up-the-environment">Setting up the environment</h1>
+
+<p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-csv%7C3.0%7C">Dependency</a> to your build.</p>
+
+<p>for Maven :</p>
 
 <h2 id="java-8">Java 8</h2>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>sfm-csv<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;&lt;/version&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
 <h2 id="java-6-7">Java 6, 7</h2>
@@ -120,15 +108,58 @@
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>sfm-csv<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;&lt;/version&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.0<span class="nt">&lt;/version&gt;</span>
     <span class="nt">&lt;classifier&gt;</span>jdk16<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<h1 id="csvparser">CsvParser</h1>
+<h1 id="reading-a-csv-file">Reading a csv file</h1>
 
-<h1 id="csvmapper">CsvMapper</h1>
+<p>The CsvParser api allows you to read from a File, a Reader or a CharSequence
+via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.0/index.html?org/simpleflatmapper/util/RowHandler.html">RowHandler</a> callback, 
+a Iterator or a Stream of String[]</p>
 
-<h1 id="csvwriter">CsvWriter</h1>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Callback</span>
+<span class="n">CsvParser</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">consumer</span><span class="o">);</span>
+    
+<span class="c1">// Iterator</span>
+<span class="k">try</span> <span class="o">(</span><span class="n">CloseableIterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">it</span> <span class="o">=</span> <span class="n">CsvParser</span><span class="o">.</span><span class="na">iterator</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Stream</span>
+<span class="k">try</span> <span class="o">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">CsvParser</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">consumer</span><span class="o">);</span>
+<span class="o">}</span></code></pre></figure>
+
+<h1 id="mapping-a-csv-to-an-object">Mapping a csv to an object</h1>
+
+<p>You can also ask the row to be map to an object. You can then read the csv from a File, a Reader 
+or a CharSequence via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.0/index.html?org/simpleflatmapper/util/RowHandler.html">RowHandler</a> callback, 
+a Iterator or a Stream of your type.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// Callback</span>
+<span class="n">CsvParser</span>
+    <span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">consumer</span><span class="o">);</span>
+    
+<span class="c1">// Iterator</span>
+<span class="k">try</span> <span class="o">(</span><span class="n">CloseableIterator</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">it</span> <span class="o">=</span> 
+        <span class="n">CsvParser</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">iterator</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">hasNext</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">next</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Stream</span>
+<span class="k">try</span> <span class="o">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">[]&gt;</span> <span class="n">stream</span> <span class="o">=</span> 
+        <span class="n">CsvParser</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">stream</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
+    <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">consumer</span><span class="o">);</span>
+<span class="o">}</span></code></pre></figure>
+
+<h1 id="writing-a-csv-from-an-object">Writing a csv from an object</h1>
 
       </div>
     </main>
