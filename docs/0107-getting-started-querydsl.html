@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>SimpleFlatMapper</title>
+  <title>Getting Started QueryDsl</title>
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www2.simpleflatmapper.org/">
+  <link rel="canonical" href="http://www2.simpleflatmapper.org/0107-getting-started-querydsl.html">
   <link rel="alternate" type="application/rss+xml" title="SimpleFlatMapper" href="http://www2.simpleflatmapper.org/feed.xml">
 </head>
 
@@ -89,63 +89,28 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <p>SimpleFlatMapper provides a very fast and easy to use mapper for</p>
+        <h1 id="setting-up-the-environment">Setting up the environment</h1>
 
-<ul>
-  <li><a href="0102-getting-started-jdbc.html">Jdbc, aka micro ORM</a></li>
-  <li><a href="0101-getting-started-csv.html">Csv</a>, <a href="0105-getting-started-poi.html">Excel spreadsheet</a></li>
-  <li><a href="0103-getting-started-datastax.html">Cassandra Datastax</a></li>
-</ul>
+<p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-querydsl%7C3.0%7C">Dependency</a> to your build.</p>
 
-<p>It integrates with</p>
-<ul>
-  <li><a href="0106-getting-started-jooq.html">jOOQ</a></li>
-  <li><a href="0104-getting-started-springjdbc.html">Spring Jdbc</a></li>
-  <li><a href="0108-getting-started-sql2o.html">Sql2o</a></li>
-  <li><a href="0107getting-started-querydsl.html">QueryDSL</a></li>
-</ul>
+<p>for Maven :</p>
 
-<p>The mapper supports</p>
-<ul>
-  <li><a href="">Constructor injection</a></li>
-  <li><a href="">Setter injection</a></li>
-  <li><a href="">Field injection</a></li>
-  <li><a href="">Builder pattern</a> - like <a href="">Immutables</a> -</li>
-  <li><a href="">Deep object structure</a></li>
-  <li><a href="">Tuples</a> including <a href="">jOOL</a> and <a href="">Fasttuple</a></li>
-  <li><a href="">List, Array and Map</a></li>
-</ul>
+<h2 id="java-8">Java 8</h2>
 
-<p>No annotation, no configuration needed. 
-Default behavior can be changed programmatically.
-You can also extends the type mapping by providing <a href="">converters</a></p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>sfm-querydsl<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<p>The csv module also provides one of the <a href="">fastest java csv parser</a>.</p>
+<h2 id="java-6-7">Java 6, 7</h2>
 
-<p>It can all run on java 6, 7, 8 and 9.</p>
-
-<p>Some sample code :</p>
-
-<h1 id="jdbc">Jdbc</h1>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapper</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">mapper</span> <span class="o">=</span>
-    <span class="n">JdbcMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">newMapper</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">findAll</span><span class="o">(</span><span class="n">Consumer</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">consumer</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="o">{</span>
-    <span class="k">try</span> <span class="o">(</span><span class="n">Connection</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">getConnection</span><span class="o">();</span>
-        <span class="n">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> 
-            <span class="n">conn</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="s">"select * from my_table"</span><span class="o">);</span>
-        <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">mapper</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">rs</span><span class="o">,</span> <span class="n">consumer</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<h1 id="csv">Csv</h1>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">CsvParser</span>
-    <span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">reader</span><span class="o">)</span>
-    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>sfm-querydsl<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;classifier&gt;</span>jdk16<span class="nt">&lt;/classifier&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
 
       </div>
