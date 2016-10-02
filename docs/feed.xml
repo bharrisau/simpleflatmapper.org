@@ -5,9 +5,42 @@
     <description></description>
     <link>http://www2.simpleflatmapper.org/</link>
     <atom:link href="http://www2.simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 02 Oct 2016 20:54:21 +0100</pubDate>
-    <lastBuildDate>Sun, 02 Oct 2016 20:54:21 +0100</lastBuildDate>
+    <pubDate>Sun, 02 Oct 2016 21:20:34 +0100</pubDate>
+    <lastBuildDate>Sun, 02 Oct 2016 21:20:34 +0100</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.0</title>
+        <description>&lt;h1 id=&quot;how-to-migrate-to-v3011-v3-migrationhtml&quot;&gt;&lt;a href=&quot;/11-v3-migration.html&quot;&gt;How to Migrate to v3.0&lt;/a&gt;&lt;/h1&gt;
+
+&lt;h1 id=&quot;v30-mains-was-to-prepare-for-java-9-jigsaw&quot;&gt;V3.0 mains was to prepare for java 9 jigsaw.&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;rename package to follow domain name org.sfm -&amp;gt; org.simpleflatmapper&lt;/li&gt;
+  &lt;li&gt;split modules csv parser is in sfm-csv amd jdbc mapper in sfm-jdbc&lt;/li&gt;
+  &lt;li&gt;add jdk9ea jars with module info&lt;/li&gt;
+  &lt;li&gt;use service loader for extension&lt;/li&gt;
+  &lt;li&gt;joda time needs the converter-joda-time to work&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;a-few-designed-issue-have-been-also-addressed&quot;&gt;a few designed issue have been also addressed&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;define a collector service that is used across the board, and allows extension&lt;/li&gt;
+  &lt;li&gt;remove the DirectClassMeta hack&lt;/li&gt;
+  &lt;li&gt;remove jdk7 binary as jdk6 is the same&lt;/li&gt;
+  &lt;li&gt;embedded asm in renamed package&lt;/li&gt;
+  &lt;li&gt;library updates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+</description>
+        <pubDate>Sat, 01 Oct 2016 00:00:00 +0100</pubDate>
+        <link>http://www2.simpleflatmapper.org/2016/10/01/v3.0.html</link>
+        <guid isPermaLink="true">http://www2.simpleflatmapper.org/2016/10/01/v3.0.html</guid>
+        
+        
+      </item>
     
   </channel>
 </rss>

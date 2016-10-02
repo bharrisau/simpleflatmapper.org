@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Migrating to v3.</title>
-  <meta name="description" content="">
+  <title>Release v3.0</title>
+  <meta name="description" content="How to Migrate to v3.0">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://www2.simpleflatmapper.org/11-v3-migration.html">
+  <link rel="canonical" href="http://www2.simpleflatmapper.org/2016/10/01/v3.0.html">
   <link rel="alternate" type="application/rss+xml" title="SimpleFlatMapper" href="http://www2.simpleflatmapper.org/feed.xml">
 </head>
 
@@ -89,22 +89,62 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <p># sfm module has been split into</p>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Release v3.0</h1>
+        <p class="post-meta"><time datetime="2016-10-01T00:00:00+01:00" itemprop="datePublished">Oct 1, 2016</time></p>
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        <h1 id="how-to-migrate-to-v3011-v3-migrationhtml"><a href="/11-v3-migration.html">How to Migrate to v3.0</a></h1>
+
+<h1 id="v30-mains-was-to-prepare-for-java-9-jigsaw">V3.0 mains was to prepare for java 9 jigsaw.</h1>
 
 <ul>
-  <li>sfm-csv for the Csv related code, CsvParser, CsvMapper, CsvWritter.</li>
-  <li>sfm-jdbc for the Jdbc related code, JdbcMapper, PreparedStatementMapper, Crud.</li>
+  <li>rename package to follow domain name org.sfm -&gt; org.simpleflatmapper</li>
+  <li>split modules csv parser is in sfm-csv amd jdbc mapper in sfm-jdbc</li>
+  <li>add jdk9ea jars with module info</li>
+  <li>use service loader for extension</li>
+  <li>joda time needs the converter-joda-time to work</li>
 </ul>
 
-<h1 id="the-packages-have-been-rename">the packages have been rename</h1>
+<h1 id="a-few-designed-issue-have-been-also-addressed">a few designed issue have been also addressed</h1>
+
 <ul>
-  <li>org.sfm -&gt; org.simpleflatmapper</li>
-  <li>org.sfm.utils -&gt; org.simpleflatmapper.util</li>
+  <li>define a collector service that is used across the board, and allows extension</li>
+  <li>remove the DirectClassMeta hack</li>
+  <li>remove jdk7 binary as jdk6 is the same</li>
+  <li>embedded asm in renamed package</li>
+  <li>library updates</li>
 </ul>
 
-<h1 id="joda-time-support">Joda time support</h1>
-<p>You know need to include the sfm-converter-joda-time module</p>
+<p>…</p>
 
+    </div>
+
+    <div id="disqus_thread"></div>
+<script>
+
+/**
+ *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+ *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables */
+/*
+var disqus_config = function () {
+    this.page.url = 'http://www2.simpleflatmapper.org/2016/10/01/v3.0.html';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '/2016/10/01/v3.0'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//arogerblog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</article>
 
       </div>
     </main>
