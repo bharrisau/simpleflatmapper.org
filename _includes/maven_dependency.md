@@ -23,3 +23,14 @@ for Maven :
     <classifier>jdk16</classifier>
 </dependency>
 {% endhighlight %}
+
+## Java 9
+
+{% highlight xml %}
+<dependency>
+    <groupId>org.simpleflatmapper</groupId>
+    <artifactId>sfm-{{page.module}}</artifactId>
+    <version>{% include currentversion.html %}</version>
+    <classifier>jdk9ea</classifier>
+</dependency>
+{% endhighlight %}

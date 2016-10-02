@@ -14,20 +14,20 @@ It integrates with
  * [Sql2o](0108-getting-started-sql2o.html)
  * [QueryDSL](0107getting-started-querydsl.html)
  
-The mapper supports 
- * [Constructor injection]()
- * [Setter injection]()
- * [Field injection]()
- * [Builder pattern]() - like [Immutables]() -
- * [Deep object structure]()
- * [Tuples]() including [jOOL]() and [Fasttuple]()
- * [List, Array and Map]()
+The [mapper](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Property-Mapping) supports  
+ * Constructor injection
+ * Setter injection
+ * Public Field injection
+ * [Builder Pattern](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Property-Mapping#builder-pattern) - like [Immutables](http://immutables.github.io/) -
+ * Deep object structure
+ * Tuples] including [jOOL](https://github.com/jOOQ/jOOL) tuples ans [Fasttuple](https://github.com/boundary/fasttuple)
+ * List, Array and Map
  
 No annotation, no configuration needed. 
 Default behavior can be changed programmatically.
-You can also extends the type mapping by providing [converters]()
+You can also extends the type mapping by providing converters
 
-The csv module also provides one of the [fastest java csv parser]().
+The csv module also provides one of the [fastest java csv parser](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Csv-Performance).
 
 It can all run on java 6, 7, 8 and 9.
 
