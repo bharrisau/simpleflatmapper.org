@@ -160,10 +160,12 @@ manually if there none or if you want to skip them.</p>
 <span class="o">}</span>
 
 <span class="c1">// Stream</span>
-<span class="k">try</span> <span class="o">(</span><span class="n">Stream</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">stream</span> <span class="o">=</span>
-             <span class="n">CsvParser</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">stream</span><span class="o">(</span><span class="n">file</span><span class="o">))</span> <span class="o">{</span>
-    <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
-<span class="o">}</span>
+<span class="n">CsvParser</span>
+        <span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">stream</span><span class="o">(</span>
+            <span class="n">file</span><span class="o">,</span> 
+            <span class="o">(</span><span class="n">s</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span> <span class="n">s</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span> <span class="k">return</span> <span class="kc">null</span><span class="o">;</span> <span class="o">}</span>
+        <span class="o">)</span>
 
 <span class="c1">// override headers</span>
 <span class="n">CsvParser</span>
