@@ -14,11 +14,11 @@ It integrates with
  * [Sql2o](0108-getting-started-sql2o.html)
  * [QueryDSL](0107getting-started-querydsl.html)
  
-The [mapper](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Property-Mapping) supports  
+The mapper [supports](0201-property-mapping.html)   
  * Constructor injection
  * Setter injection
  * Public Field injection
- * [Builder Pattern](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Property-Mapping#builder-pattern) - like [Immutables](http://immutables.github.io/) -
+ * [Builder Pattern](0201-property-mapping.html#builder-pattern) - like [Immutables](http://immutables.github.io/) -
  * Deep object structure
  * Tuples] including [jOOL](https://github.com/jOOQ/jOOL) tuples ans [Fasttuple](https://github.com/boundary/fasttuple)
  * List, Array and Map
