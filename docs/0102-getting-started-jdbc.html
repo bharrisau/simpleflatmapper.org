@@ -252,6 +252,55 @@ You will need to provide</p>
 
 <p>see <a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm/src/test/java/org/sfm/jdbc/CrudTest.java">CrudTest</a> for more samples</p>
 
+<h2 id="namedquery">NamedQuery</h2>
+
+<p>Because there are now available name from the PreparedStatement parameter metadata we can only builder a PreparedStatement mapper manually by adding the column name in order.
+The NamedQuery is there to solve that by using named parameter - ::name in place of ? -. If the ? placeholder is used then it will try to extrapolate the name, that should works find for insert and updates. But it’s not guarantee to work perfectly on complex select query for which it’s better to used name parameter.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">NamedSqlQuery</span> <span class="c1">// 1 =&gt; id</span>
+    <span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"select id, name, email, creation_time, type_ordinal, type_name "</span>
+           <span class="o">+</span> <span class="s">" from TEST_DB_OBJECT where id = ? "</span><span class="o">);</span>
+
+<span class="n">NamedSqlQuery</span> <span class="c1">// 1 =&gt; id, 2 =&gt; name, 3 =&gt; email, 4 =&gt; creation_time, 5 =&gt; type_ordinal, 6 =&gt; typenamed</span>
+    <span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"INSERT INTO test_db_object(id, name, email, creation_time, type_ordinal, type_name) "</span>
+           <span class="o">+</span> <span class="s">" values(?, ?, ?, ?, ?, :typenamed)"</span><span class="o">);</span></code></pre></figure>
+
+<h3 id="querypreparer">QueryPreparer</h3>
+
+<p>The QueryPreparer is created from a NamedQuery. 
+It is important to note that there now type information available when creating the preparer. For most 
+mapping it is not an issue but for some like Enum it will matter.
+You can specify the type in the mapper factory by adding a SqlTypeColumnProperty</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapperFactory</span>
+    <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">addColumnProperty</span><span class="o">(</span><span class="s">"type_ordinal"</span><span class="o">,</span> <span class="n">SqlTypeColumnProperty</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">Types</span><span class="o">.</span><span class="na">NUMERIC</span><span class="o">));</span></code></pre></figure>
+
+<h3 id="sample">Sample</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">NamedSqlQuery</span> <span class="n">selectQuery</span> <span class="o">=</span> 
+    <span class="n">NamedSqlQuery</span>
+        <span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"select id, name, email, creation_time, type_ordinal, type_name "</span>
+               <span class="o">+</span> <span class="s">" from TEST_DB_OBJECT where id = ? "</span><span class="o">);</span>
+
+<span class="n">QueryPreparer</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">selectQueryPreparer</span> <span class="o">=</span>
+    <span class="n">JdbcMapperFactory</span>
+        <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="n">selectQuery</span><span class="o">);</span>
+
+<span class="n">JdbcMapper</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">dbObjectMapper</span> <span class="o">=</span> 
+    <span class="n">JdbcMapperFactory</span>
+        <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">newMapper</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+
+
+<span class="k">try</span> <span class="o">(</span><span class="n">PreparedStatement</span> <span class="n">ps</span> <span class="o">:</span> <span class="n">selectQueryPreparer</span><span class="o">.</span><span class="na">prepare</span><span class="o">(</span><span class="n">connection</span><span class="o">).</span><span class="na">bind</span><span class="o">(</span><span class="n">dbObject</span><span class="o">);</span>
+    <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">())</span> <span class="o">{</span>
+    <span class="n">dbObjectMapper</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">rs</span><span class="o">,</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+<span class="o">}</span></code></pre></figure>
+
+
 
         
     </div>
