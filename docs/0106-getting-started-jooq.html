@@ -149,7 +149,6 @@
 <span class="k">try</span> <span class="o">(</span><span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">fetchResultSet</span><span class="o">())</span> <span class="o">{</span>
     <span class="n">mapper</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">rs</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 <span class="o">}</span></code></pre></figure>
-<p>```</p>
 
 <p>That will allow you to get the query generation power of jOOQ and the close to pure Jdbc performance of SimpleFlatMapper.</p>
 
