@@ -161,3 +161,60 @@ crud.create(connection, object, (key) -> object.setId(key));
 
 
 see [CrudTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm/src/test/java/org/sfm/jdbc/CrudTest.java) for more samples
+
+
+## NamedQuery
+
+Because there are now available name from the PreparedStatement parameter metadata we can only builder a PreparedStatement mapper manually by adding the column name in order.
+The NamedQuery is there to solve that by using named parameter - ::name in place of ? -. If the ? placeholder is used then it will try to extrapolate the name, that should works find for insert and updates. But it's not guarantee to work perfectly on complex select query for which it's better to used name parameter.
+
+
+{% highlight java %}
+NamedSqlQuery // 1 => id
+    .parse("select id, name, email, creation_time, type_ordinal, type_name "
+           + " from TEST_DB_OBJECT where id = ? ");
+
+NamedSqlQuery // 1 => id, 2 => name, 3 => email, 4 => creation_time, 5 => type_ordinal, 6 => typenamed
+    .parse("INSERT INTO test_db_object(id, name, email, creation_time, type_ordinal, type_name) "
+           + " values(?, ?, ?, ?, ?, :typenamed)");
+{% endhighlight %}
+
+### QueryPreparer
+
+The QueryPreparer is created from a NamedQuery. 
+It is important to note that there now type information available when creating the preparer. For most 
+mapping it is not an issue but for some like Enum it will matter.
+You can specify the type in the mapper factory by adding a SqlTypeColumnProperty
+{% highlight java %}
+JdbcMapperFactory
+    .newInstance()
+    .addColumnProperty("type_ordinal", SqlTypeColumnProperty.of(Types.NUMERIC));
+{% endhighlight %}
+
+### Sample
+
+{% highlight java %}
+NamedSqlQuery selectQuery = 
+    NamedSqlQuery
+        .parse("select id, name, email, creation_time, type_ordinal, type_name "
+               + " from TEST_DB_OBJECT where id = ? ");
+
+QueryPreparer<DbObject> selectQueryPreparer =
+    JdbcMapperFactory
+        .newInstance()
+        .from(DbObject.class)
+        .to(selectQuery);
+
+JdbcMapper<DbObject> dbObjectMapper = 
+    JdbcMapperFactory
+        .newInstance()
+        .newMapper(DbObject.class)
+
+
+try (PreparedStatement ps : selectQueryPreparer.prepare(connection).bind(dbObject);
+    ResultSet rs = ps.executeQuery()) {
+    dbObjectMapper.forEach(rs, System.out::println);
+}
+{% endhighlight %}
+
+
