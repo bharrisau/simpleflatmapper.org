@@ -38,6 +38,6 @@ ResultQuery<MyRecord> query = dsl.select().from(TABLE);
 try (ResultSet rs = query.fetchResultSet()) {
     mapper.stream(rs).forEach(System.out::println);
 }
-{% endhighlight %}```
+{% endhighlight %}
 
 That will allow you to get the query generation power of jOOQ and the close to pure Jdbc performance of SimpleFlatMapper.
