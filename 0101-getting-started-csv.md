@@ -5,6 +5,7 @@ short_title: Csv
 category: getting_started
 module: csv
 ---
+# Getting Started Csv
 
 {% include maven_dependency.md %}
 
@@ -33,7 +34,7 @@ try (Stream<String[]> stream = CsvParser.stream(file)) {
 }
 {% endhighlight %}
 
-# Mapping a csv to an object
+## Mapping a csv to an object
 
 You can also ask the row to be map to an object. You can then read the csv from a File, a Reader 
 or a CharSequence via a [CheckedConsumer](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/CheckedConsumer.html) callback, 
@@ -42,7 +43,7 @@ The mapper will use the header row - the first one - to match against the proper
 manually if there none or if you want to skip them.
 
 [Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/samples/GettingStartedCsv_csvMapper.java)
-{% highlight java%}
+{% highlight java %}
 // Callback
 CsvParser
         .mapTo(MyObject.class)
@@ -73,7 +74,7 @@ CsvParser
 {% endhighlight %}
 
 
-# Writing a csv from an object
+## Writing a csv from an object
 
 The [CsvWriter](http://static.javadoc.io/org.simpleflatmapper/sfm-csv/{% include currentversion.html %}/index.html?org/simpleflatmapper/csv/CsvWriter.html) allows you to create append object to an [Appendable](https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Appendable.html).
 If no headers are specified it will generate a list of headers from the properties of the object. Though it is
