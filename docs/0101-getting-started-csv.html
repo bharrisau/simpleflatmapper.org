@@ -88,13 +88,15 @@
 
 <main class="page-content" aria-label="Content">
     <div class="wrapper">
-        <h1 id="setting-up-the-environment">Setting up the environment</h1>
+        <h1 id="getting-started-csv">Getting Started Csv</h1>
+
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
 
 <p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-csv%7C3.0%7C">Dependency</a> to your build.</p>
 
 <p>for Maven :</p>
 
-<h2 id="java-8">Java 8</h2>
+<h3 id="java-8">Java 8</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
@@ -102,7 +104,7 @@
     <span class="nt">&lt;version&gt;</span>3.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<h2 id="java-6-7">Java 6, 7</h2>
+<h3 id="java-6-7">Java 6, 7</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
@@ -111,7 +113,7 @@
     <span class="nt">&lt;classifier&gt;</span>jdk16<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<h2 id="java-9">Java 9</h2>
+<h3 id="java-9">Java 9</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
@@ -144,7 +146,7 @@ a Iterator or a Stream of String[]</p>
     <span class="n">stream</span><span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">row</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">row</span><span class="o">)));</span>
 <span class="o">}</span></code></pre></figure>
 
-<h1 id="mapping-a-csv-to-an-object">Mapping a csv to an object</h1>
+<h2 id="mapping-a-csv-to-an-object">Mapping a csv to an object</h2>
 
 <p>You can also ask the row to be map to an object. You can then read the csv from a File, a Reader 
 or a CharSequence via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.0/index.html?org/simpleflatmapper/util/CheckedConsumer.html">CheckedConsumer</a> callback, 
@@ -182,7 +184,7 @@ manually if there none or if you want to skip them.</p>
         <span class="o">.</span><span class="na">headers</span><span class="o">(</span><span class="s">"id"</span><span class="o">,</span> <span class="s">"email"</span><span class="o">,</span> <span class="s">"name"</span><span class="o">)</span>
         <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span></code></pre></figure>
 
-<h1 id="writing-a-csv-from-an-object">Writing a csv from an object</h1>
+<h2 id="writing-a-csv-from-an-object">Writing a csv from an object</h2>
 
 <p>The <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-csv/3.0/index.html?org/simpleflatmapper/csv/CsvWriter.html">CsvWriter</a> allows you to create append object to an <a href="https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Appendable.html">Appendable</a>.
 If no headers are specified it will generate a list of headers from the properties of the object. Though it is

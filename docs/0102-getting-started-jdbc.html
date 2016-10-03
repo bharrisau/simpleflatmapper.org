@@ -88,13 +88,15 @@
 
 <main class="page-content" aria-label="Content">
     <div class="wrapper">
-        <h1 id="setting-up-the-environment">Setting up the environment</h1>
+        <h1 id="getting-started-jdbc">Getting Started Jdbc</h1>
+
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
 
 <p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-jdbc%7C3.0%7C">Dependency</a> to your build.</p>
 
 <p>for Maven :</p>
 
-<h2 id="java-8">Java 8</h2>
+<h3 id="java-8">Java 8</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
@@ -102,7 +104,7 @@
     <span class="nt">&lt;version&gt;</span>3.0<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<h2 id="java-6-7">Java 6, 7</h2>
+<h3 id="java-6-7">Java 6, 7</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
@@ -111,7 +113,7 @@
     <span class="nt">&lt;classifier&gt;</span>jdk16<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<h2 id="java-9">Java 9</h2>
+<h3 id="java-9">Java 9</h3>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
@@ -120,11 +122,135 @@
     <span class="nt">&lt;classifier&gt;</span>jdk9ea<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<h1 id="resutlset-mapping">ResutlSet Mapping</h1>
+<h2 id="resutlset-mapping">ResutlSet Mapping</h2>
 
-<h1 id="preparedstatement-mapping">PreparedStatement Mapping</h1>
+<p>All you need to do is instantiate a mapper via the JdbcMapperFactory. The JdbcMapper should be instantiated only once as it does a lot of reflection work on instantiation. It is thread safe and can be called from multiple thread without synchronisation.</p>
 
-<h1 id="crud">Crud</h1>
+<p>### Dynamic Mapping</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapper</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">mapper</span> <span class="o">=</span> 
+    <span class="n">JdbcMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">newMapper</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code></pre></figure>
+
+<p>you can then get a Stream of MyObject from the ResultSet, the mapping will be done using the ResultSetMetaData.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">mapper</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">rs</span><span class="o">).</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span></code></pre></figure>
+
+<p>You can see more information on the <a href="0201-property-mapping.html">Property Mapping here</a></p>
+
+<h3 id="static-mapping">Static Mapping</h3>
+
+<p>If you don’t want to pay the cost of building the mapping from the ResultSetMetaData you can create a static mapper.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapper</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">mapper</span> <span class="o">=</span> 
+    <span class="n">JdbcMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">newBuilder</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">"id"</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">"name"</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">"email"</span><span class="o">)</span>
+				<span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">"year_started"</span><span class="o">).</span><span class="na">mapper</span><span class="o">();</span></code></pre></figure>
+
+<h3 id="n-relationship">1-N relationship</h3>
+
+<p><a href="https://github.com/arnaudroger/SimpleFlatMapper/wiki/SimpleFlatMapper-JdbcMapper-1-N-relationship">See Page</a></p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapper</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">mapper</span> <span class="o">=</span> 
+    <span class="n">JdbcMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">addKeys</span><span class="o">(</span><span class="s">"id"</span><span class="o">).</span><span class="na">newMapper</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code></pre></figure>
+
+<h3 id="custom-reader">Custom Reader</h3>
+
+<p>If you are not happy with the way the mapper get the value from the result set you can provide your own Getter&lt;ResultSet, P&gt; either on the factory attached to the column name or on the builder for a static mapping.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapper</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">mapper</span> <span class="o">=</span> 
+    <span class="n">JdbcMapperFactory</span>
+        <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">addCustomGetter</span><span class="o">(</span><span class="s">"id"</span><span class="o">,</span>
+            <span class="o">(</span><span class="n">target</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">rs</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="s">"id"</span><span class="o">)</span> <span class="o">+</span> <span class="mi">2000</span><span class="o">).</span><span class="na">newMapper</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="n">JdbcMapper</span><span class="o">&lt;</span><span class="n">MyObject</span><span class="o">&gt;</span> <span class="n">staticMapper</span> <span class="o">=</span> 
+    <span class="n">JdbcMapperFactory</span>
+        <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">newBuilder</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">"id"</span><span class="o">,</span> 
+            <span class="n">FieldMapperColumnDefinition</span><span class="o">.</span><span class="na">customGetter</span><span class="o">((</span><span class="n">target</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">rs</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="s">"id"</span><span class="o">)</span> <span class="o">+</span> <span class="mi">2000</span><span class="o">))</span>
+        <span class="o">.</span><span class="na">mapper</span><span class="o">();</span></code></pre></figure>
+
+<h3 id="cleanup-resources">Cleanup resources</h3>
+
+<p>The mapper does not close the result set, it is still you responsibility to close the used resource.</p>
+
+<h3 id="error-handling">Error handling</h3>
+<p>By default if an exception is thrown during the building of the mapper, the mapping or the for each loop the error is rethrown it is possible to provide your own handler error that will override that behaviour.</p>
+
+<h4 id="field-mapping-error">Field Mapping Error</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapperFactory</span>
+    <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">fieldMapperErrorHandler</span><span class="o">((</span><span class="n">key</span><span class="o">,</span> <span class="n">source</span><span class="o">,</span> <span class="n">target</span><span class="o">,</span> <span class="n">error</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Error ! on "</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">error</span><span class="o">);</span>
+    <span class="o">});</span></code></pre></figure>
+
+<h4 id="mapper-builder-error">Mapper Builder Error</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapperFactory</span>
+    <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">mapperBuilderErrorHandler</span><span class="o">(</span>
+        <span class="k">new</span> <span class="nf">MapperBuilderErrorHandler</span><span class="o">()</span> <span class="o">{</span>
+	    <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getterNotFound</span><span class="o">(</span><span class="n">String</span> <span class="n">msg</span><span class="o">)</span> <span class="o">{}</span>
+	    <span class="nd">@Override</span>
+	    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">propertyNotFound</span><span class="o">(</span><span class="n">Type</span> <span class="n">target</span><span class="o">,</span> <span class="n">String</span> <span class="n">property</span><span class="o">)</span> <span class="o">{}</span>
+	<span class="o">});</span></code></pre></figure>
+
+<h4 id="row-error-handler">Row Error Handler</h4>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapperFactory</span>
+    <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">rowHandlerErrorHandler</span><span class="o">((</span><span class="n">t</span><span class="o">,</span> <span class="n">target</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Error ! "</span> <span class="o">+</span> <span class="n">t</span> <span class="o">));</span></code></pre></figure>
+
+<h2 id="crud">Crud</h2>
+
+<h1 id="crud-on-mapped-object">Crud on mapped object</h1>
+
+<p>It is now possible to create a Crud object from the metadata in the database.
+You will need to provide</p>
+<ul>
+  <li>the target object type - needs to match the table</li>
+  <li>the key type - needs to match the primary keys of the table</li>
+  <li>a connection to the db</li>
+  <li>the table name the object is mapped too.</li>
+</ul>
+
+<p>It uses the metadata to detect the primary key and generated keys.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Crud</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">crud</span> <span class="o">=</span> 
+    <span class="n">JdbcMapperFactory</span>
+        <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">crud</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Long</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">table</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="s">"mytable"</span><span class="o">);</span>
+
+<span class="n">crud</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">object</span><span class="o">);</span>
+<span class="n">crud</span><span class="o">.</span><span class="na">read</span>  <span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">object</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+<span class="n">crud</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">object</span><span class="o">);</span>
+<span class="n">crud</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">object</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+
+<span class="n">crud</span><span class="o">.</span><span class="na">createOrUpdate</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">object</span><span class="o">);</span>
+
+<span class="n">List</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">objects</span> <span class="o">=</span> <span class="o">...;</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">keys</span> <span class="o">=</span> <span class="o">...;</span>
+
+<span class="n">crud</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">objects</span><span class="o">);</span>
+<span class="n">crud</span><span class="o">.</span><span class="na">read</span>  <span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">keys</span><span class="o">,</span> <span class="k">new</span> <span class="n">ListCollectorHandler</span><span class="o">&lt;&gt;()).</span><span class="na">getList</span><span class="o">();</span>
+<span class="n">crud</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">objects</span><span class="o">);</span>
+<span class="n">crud</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">keys</span><span class="o">);</span>
+
+<span class="n">crud</span><span class="o">.</span><span class="na">createOrUpdate</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">objects</span><span class="o">);</span></code></pre></figure>
+
+<h2 id="generated-keys">Generated keys</h2>
+
+<p>it is possible to get a callback with the value of the generated key.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">crud</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span> <span class="n">object</span><span class="o">,</span> <span class="o">(</span><span class="n">key</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">object</span><span class="o">.</span><span class="na">setId</span><span class="o">(</span><span class="n">key</span><span class="o">));</span></code></pre></figure>
+
+<p>see <a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm/src/test/java/org/sfm/jdbc/CrudTest.java">CrudTest</a> for more samples</p>
 
 
         
