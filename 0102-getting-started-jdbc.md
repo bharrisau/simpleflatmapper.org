@@ -114,7 +114,7 @@ JdbcMapperFactory
 
 ## Crud 
 
-# Crud on mapped object
+### Crud on mapped object
 
 It is now possible to create a Crud object from the metadata in the database.
 You will need to provide 
@@ -151,7 +151,7 @@ crud.createOrUpdate(connection, objects);
 
 {% endhighlight %}
 
-## Generated keys
+### Generated keys
 
 it is possible to get a callback with the value of the generated key.
 
