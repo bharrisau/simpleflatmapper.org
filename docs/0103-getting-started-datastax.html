@@ -120,6 +120,53 @@
     <span class="nt">&lt;classifier&gt;</span>jdk9ea<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
+<p>Works with datastax 2.1.x to 3.0.x</p>
+
+<h2 id="what-about-the-datastax-mapper">What about the Datastax Mapper</h2>
+<ul>
+  <li>SFM is at about 20% faster</li>
+  <li>More flexible</li>
+  <li>No configuration</li>
+</ul>
+
+<h2 id="mapper">Mapper</h2>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">final</span> <span class="n">DatastaxMapper</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">parameterGetterMap</span> <span class="o">=</span>
+    <span class="n">DatastaxMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">mapTo</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="o">...</span>
+
+    <span class="n">ResultSet</span> <span class="n">rs</span> <span class="o">=</span>
+        <span class="n">session</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span>
+            <span class="s">"select id, name, email, creation_time, type_ordinal, type_name"</span>
+            <span class="o">+</span> <span class="s">" from dbobjects"</span><span class="o">);</span>
+    <span class="kd">final</span> <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">iterator</span> <span class="o">=</span> <span class="n">parameterGetterMap</span><span class="o">.</span><span class="na">iterator</span><span class="o">(</span><span class="n">rs</span><span class="o">);</span>
+
+
+<span class="kd">final</span> <span class="n">DatastaxBinder</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">datastaxBinder</span> <span class="o">=</span>
+    <span class="n">DatastaxMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">mapFrom</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+<span class="o">...</span>
+    <span class="n">PreparedStatement</span> <span class="n">preparedStatement</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="na">prepare</span><span class="o">(</span>
+       <span class="s">"insert into "</span> <span class="o">+</span>
+       <span class="s">"dbobjects(id, name, email, creation_time, type_ordinal, type_name) "</span> <span class="o">+</span>
+       <span class="s">"values(?, ?, ?, ?, ?, ?)"</span>
+    <span class="o">);</span>
+
+    <span class="n">session</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">datastaxBinder</span><span class="o">.</span><span class="na">mapTo</span><span class="o">(</span><span class="n">dbObjects</span><span class="o">,</span> <span class="n">preparedStatement</span><span class="o">));</span></code></pre></figure>
+
+<h2 id="crud">Crud</h2>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">DatastaxCrud</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">,</span> <span class="n">Long</span><span class="o">&gt;</span> <span class="n">crud</span> <span class="o">=</span>
+    <span class="n">DatastaxMapperFactory</span>
+        <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">crud</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Long</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">to</span><span class="o">(</span><span class="n">session</span><span class="o">,</span> <span class="s">"dbobjects"</span><span class="o">);</span>
+
+<span class="n">crud</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">session</span><span class="o">,</span> <span class="n">object</span><span class="o">);</span>
+<span class="n">DbObject</span> <span class="n">object</span> <span class="o">=</span> <span class="n">crud</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">session</span><span class="o">,</span> <span class="n">object</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span>
+<span class="n">crud</span><span class="o">.</span><span class="na">delete</span><span class="o">(</span><span class="n">session</span><span class="o">,</span> <span class="n">object</span><span class="o">.</span><span class="na">getId</span><span class="o">());</span></code></pre></figure>
+
 
 
         
