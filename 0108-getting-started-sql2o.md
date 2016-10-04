@@ -7,3 +7,14 @@ module: sql2o
 ---
 
 {% include maven_dependency.md %}
+
+
+## SQL2o integration
+
+{% highlight java %}
+Query query = sql2o.open().createQuery("select * from table");
+query.setAutoDeriveColumnNames(true);
+query.setResultSetHandlerFactoryBuilder(new SfmResultSetHandlerFactoryBuilder());
+
+List<DbObject> dbObjects = query.executeAndFetch(DbObject.class);
+{% endhighlight %}

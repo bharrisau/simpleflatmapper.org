@@ -12,7 +12,7 @@ It integrates with
  * [jOOQ](0106-getting-started-jooq.html)
  * [Spring Jdbc](0104-getting-started-springjdbc.html)
  * [Sql2o](0108-getting-started-sql2o.html)
- * [QueryDSL](0107getting-started-querydsl.html)
+ * [QueryDSL](0107-getting-started-querydsl.html)
  
 The mapper [supports](0201-property-mapping.html)   
  * Constructor injection
