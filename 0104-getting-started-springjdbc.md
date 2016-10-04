@@ -8,11 +8,9 @@ module: springjdbc
 
 {% include maven_dependency.md %}
 
-Needs updating with v3.0
-
 ## Create parameterGetterMap
 
-See [JdbcTemplateMapperFactoryTest](/sfm-springjdbc/src/test/java/org/simpleflatmapper/jdbc/spring/JdbcTemplateMapperFactoryTest.java) for more examples.
+See [JdbcTemplateMapperFactoryTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-springjdbc/src/test/java/org/simpleflatmapper/jdbc/spring/JdbcTemplateMapperFactoryTest.java) for more examples.
 
 {% highlight java %}
 class MyDao {
