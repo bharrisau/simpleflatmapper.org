@@ -5,6 +5,7 @@ short_title: jOOQ
 category: getting_started
 module: jooq
 ---
+# Getting Started jOOQ
 
 {% include maven_dependency.md %}
 

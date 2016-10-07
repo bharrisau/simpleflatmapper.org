@@ -20,7 +20,7 @@ The mapper [supports](0201-property-mapping.html)
  * Public Field injection
  * [Builder Pattern](0201-property-mapping.html#builder-pattern) - like [Immutables](http://immutables.github.io/) -
  * Deep object structure
- * Tuples] including [jOOL](https://github.com/jOOQ/jOOL) tuples ans [Fasttuple](https://github.com/boundary/fasttuple)
+ * Tuples including [jOOL](https://github.com/jOOQ/jOOL) tuples ans [Fasttuple](https://github.com/boundary/fasttuple)
  * List, Array and Map
  
 No annotation, no configuration needed. 

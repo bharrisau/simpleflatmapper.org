@@ -1,3 +1,7 @@
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.simpleflatmapper/sfm-{{page.module}}.svg)](http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-{{page.module}}%7C{% include currentversion.html %}%7C)
+[![JavaDoc](https://img.shields.io/badge/javadoc-{{ site.libraryVersion }}-blue.svg)](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-{{page.module}})
+
 ## Setting up the environment 
 
 Add the [Dependency](http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-{{page.module}}%7C{% include currentversion.html %}%7C) to your build.

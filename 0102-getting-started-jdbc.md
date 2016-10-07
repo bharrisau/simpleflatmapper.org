@@ -12,9 +12,12 @@ module: jdbc
 
 ## ResutlSet Mapping
 
-All you need to do is instantiate a mapper via the JdbcMapperFactory. The JdbcMapper should be instantiated only once as it does a lot of reflection work on instantiation. It is thread safe and can be called from multiple thread without synchronisation.
+All you need to do is instantiate a mapper via the JdbcMapperFactory. 
+The JdbcMapper should be instantiated only once as it does a lot of reflection work on instantiation. 
+It is thread safe and can be called from multiple thread without synchronisation.
 
-### Dynamic Mapping
+
+### Dynamic Mapping
 
 {% highlight java %}
 JdbcMapper<MyObject> mapper = 

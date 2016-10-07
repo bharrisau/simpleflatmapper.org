@@ -5,21 +5,28 @@ title: Docs
 
 # [Property Matching](0201-property-mapping.html)
 
-# Javadocs
+# Mappers
 
-* [sfm-csv](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-csv/{{ site.libraryVersion }})
-* [sfm-jdbc](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-jdbc/{{ site.libraryVersion }})
-* [sfm-datastax](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-datastax/{{ site.libraryVersion }})
-* [sfm-jooq](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-jooq/{{ site.libraryVersion }})
-* [sfm-springjdbc](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-springjdbc/{{ site.libraryVersion }})
-* [sfm-poi](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-poi/{{ site.libraryVersion }})
-* [sfm-querydsl](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-querydsl/{{ site.libraryVersion }})
-* [sfm-sql2o](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-sql2o/{{ site.libraryVersion }})
+| Module | Maven | Javadoc |
+|----|---:|---:|
+{% include doc-table-row.md module='csv' gs='01' %}
+{% include doc-table-row.md module='jdbc' gs='02' %}
+{% include doc-table-row.md module='datastax' gs='03' %}
+{% include doc-table-row.md module='jooq' gs='06' %}
+{% include doc-table-row.md module='springjdbc' gs='04' %}
+{% include doc-table-row.md module='poi' gs='05' %}
+{% include doc-table-row.md module='querydsl' gs='07' %}
+{% include doc-table-row.md module='sql2o' gs='08' %}
 
-* [sfm-converter](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-converter/{{ site.libraryVersion }})
-* [sfm-map](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-map/{{ site.libraryVersion }})
-* [sfm-reflect](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-reflect/{{ site.libraryVersion }})
-* [sfm-util](http://www.javadoc.io/doc/org.simpleflatmapper/sfm-util/{{ site.libraryVersion }})
+# Libraries
+
+|Module|Maven|Javadoc|
+|----|---|---|
+{% include doc-table-row.md module='converter' %}
+{% include doc-table-row.md module='map' %}
+{% include doc-table-row.md module='reflect' %}
+{% include doc-table-row.md module='util' %}
+
 
 
  

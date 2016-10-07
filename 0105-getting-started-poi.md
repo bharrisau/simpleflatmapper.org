@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Getting Started Excel spreadsheet
-short_title: Excel spreadsheet
+short_title: Excel
 category: getting_started
 module: poi
 ---
+# Getting Started Excel POI
 
 {% include maven_dependency.md %}
 

@@ -1,10 +1,11 @@
 ---
 layout: default
 title: Getting Started Cassandra Datastax
-short_title: Cassandra Datastax
+short_title: Cassandra
 category: getting_started
 module: datastax
 ---
+# Getting Started Cassandra
 
 {% include maven_dependency.md %}
 

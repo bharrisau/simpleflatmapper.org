@@ -5,6 +5,7 @@ short_title: Sql2o
 category: getting_started
 module: sql2o
 ---
+# Getting Started Sql2o
 
 {% include maven_dependency.md %}
 
