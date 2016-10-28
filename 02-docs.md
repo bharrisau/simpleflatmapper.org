@@ -5,6 +5,7 @@ title: Docs
 
 # [Property Matching](0201-property-mapping.html)
 
+# [Converters](0202-converters.html)
 # Mappers
 
 | Module | Maven | Javadoc |

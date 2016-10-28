@@ -97,3 +97,28 @@ public void writeCsv(Collection<MyObject> objects, File file)
     }
 }
 {% endhighlight %}
+
+# writing with header not matching the property name
+
+if you want to use a header that does not match the name of the property
+for example I need the email header to be contact you will need to 
+add an alias by adding RenameProperty on the column.
+
+{% highlight java%}
+// better to cache the dsl with the from 
+// to avoid recomputing the object metadata
+CsvWriter.CsvWriterDSL<MyObject> writerDsl =
+    CsvWriter
+        .from(MyObject.class)
+        .columns("id" ,"name")
+        .column("contact", new RenameProperty("email"));
+
+public void writeCsv(Collection<MyObject> objects, File file) 
+                                                throws IOException {
+    try (FileWriter fileWriter = new FileWriter(file)) {
+        CsvWriter<MyObject> writer=
+                writerDsl.to(fileWriter);
+        objects.forEach(CheckedConsumer.toConsumer(writer::append));
+    }
+}
+{% endhighlight %}

@@ -30,11 +30,13 @@ for Maven :
 
 ### Java 9
 
+Version 3.1 is not yet published, the maven compiler plugin is not compatible with last 140 version.
+ 
 {% highlight xml %}
 <dependency>
     <groupId>org.simpleflatmapper</groupId>
     <artifactId>sfm-{{page.module}}</artifactId>
-    <version>{% include currentversion.html %}</version>
+    <version>3.0</version>
     <classifier>jdk9ea</classifier>
 </dependency>
 {% endhighlight %}
