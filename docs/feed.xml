@@ -5,9 +5,24 @@
     <description></description>
     <link>http://www2.simpleflatmapper.org/</link>
     <atom:link href="http://www2.simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Oct 2016 15:53:45 +0100</pubDate>
-    <lastBuildDate>Fri, 28 Oct 2016 15:53:45 +0100</lastBuildDate>
+    <pubDate>Fri, 28 Oct 2016 15:56:33 +0100</pubDate>
+    <lastBuildDate>Fri, 28 Oct 2016 15:56:33 +0100</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.1</title>
+        <description>&lt;h1 id=&quot;v31&quot;&gt;V3.1&lt;/h1&gt;
+
+&lt;p&gt;fix issue &lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/353&quot;&gt;353&lt;/a&gt; when reading invalid
+csv like ‘cell1”,cell2’ it should see it as 2 cells ‘cell1”’ and ‘cell2’ but was generating
+only one cell ‘cell1”,cell2’&lt;/p&gt;
+</description>
+        <pubDate>Thu, 27 Oct 2016 00:00:00 +0100</pubDate>
+        <link>http://www2.simpleflatmapper.org/2016/10/27/v3.1.html</link>
+        <guid isPermaLink="true">http://www2.simpleflatmapper.org/2016/10/27/v3.1.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.0</title>
