@@ -5,8 +5,8 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Nov 2016 10:09:51 +0000</pubDate>
-    <lastBuildDate>Wed, 09 Nov 2016 10:09:51 +0000</lastBuildDate>
+    <pubDate>Wed, 09 Nov 2016 11:50:56 +0000</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2016 11:50:56 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -18,7 +18,7 @@
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/356&quot;&gt;356&lt;/a&gt; refactor csv parser to reduce duplicate unescaping code&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/352&quot;&gt;352&lt;/a&gt; add LazyCrud to delay need for connection to first query&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/350&quot;&gt;350&lt;/a&gt; add ConnectedCrud that manages it’s own datasource&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/356&quot;&gt;346&lt;/a&gt; Crud allow for custom filter crud.when(“ email = :email and name = :name “, DbObject.class).readFirst(object);&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/356&quot;&gt;346&lt;/a&gt; Crud allow for custom filter crud.where(“ email = :email and name = :name “, DbObject.class).readFirst(object);&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
