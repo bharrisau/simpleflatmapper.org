@@ -5,9 +5,26 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 Nov 2016 11:54:58 +0000</pubDate>
-    <lastBuildDate>Wed, 09 Nov 2016 11:54:58 +0000</lastBuildDate>
+    <pubDate>Wed, 16 Nov 2016 23:13:13 +0000</pubDate>
+    <lastBuildDate>Wed, 16 Nov 2016 23:13:13 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.3</title>
+        <description>&lt;h1 id=&quot;v33httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a33&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.3&quot;&gt;V3.3&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/366&quot;&gt;366&lt;/a&gt; fix break detector on array&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/363&quot;&gt;363&lt;/a&gt; remove csv specialised impl, make generic version as fast&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 16 Nov 2016 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2016/11/16/v3.3.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2016/11/16/v3.3.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.2</title>
