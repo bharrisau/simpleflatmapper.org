@@ -5,8 +5,8 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Nov 2016 10:02:47 +0000</pubDate>
-    <lastBuildDate>Thu, 17 Nov 2016 10:02:47 +0000</lastBuildDate>
+    <pubDate>Thu, 17 Nov 2016 10:04:00 +0000</pubDate>
+    <lastBuildDate>Thu, 17 Nov 2016 10:04:00 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -29,7 +29,10 @@
     
       <item>
         <title>Release v3.2</title>
-        <description>&lt;h1 id=&quot;v32httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a32&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.2&quot;&gt;V3.2&lt;/a&gt;&lt;/h1&gt;
+        <description>&lt;p&gt;An objenesis dependency was introduce with the wrong scope, upgrade to 3.3 or 
+exclude objenesis.&lt;/p&gt;
+
+&lt;h1 id=&quot;v32httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a32&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.2&quot;&gt;V3.2&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/357&quot;&gt;357&lt;/a&gt; use maven-compiler-plugin offical jigsaw support&lt;/li&gt;
