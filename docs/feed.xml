@@ -5,9 +5,27 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Nov 2016 10:04:00 +0000</pubDate>
-    <lastBuildDate>Thu, 17 Nov 2016 10:04:00 +0000</lastBuildDate>
+    <pubDate>Mon, 05 Dec 2016 22:43:12 +0000</pubDate>
+    <lastBuildDate>Mon, 05 Dec 2016 22:43:12 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.4</title>
+        <description>&lt;h1 id=&quot;v34httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a34&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.4&quot;&gt;V3.4&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/370&quot;&gt;370&lt;/a&gt; csv parser perf optimisation see &lt;a href=&quot;https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.4.csv&quot;&gt;benchmark&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/365&quot;&gt;365&lt;/a&gt; support setter on target object and getter on source for non existing properties&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/361&quot;&gt;361&lt;/a&gt; add where support for JdbcTemplateCrud&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2016/12/04/v3.4.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2016/12/04/v3.4.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.3</title>
