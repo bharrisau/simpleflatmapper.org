@@ -5,13 +5,15 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Dec 2016 18:03:58 +0000</pubDate>
-    <lastBuildDate>Fri, 09 Dec 2016 18:03:58 +0000</lastBuildDate>
+    <pubDate>Fri, 09 Dec 2016 18:06:37 +0000</pubDate>
+    <lastBuildDate>Fri, 09 Dec 2016 18:06:37 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Release v3.5</title>
         <description>&lt;h1 id=&quot;v35httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a35&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.5&quot;&gt;V3.5&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://simpleflatmapper.org/12-csv-performance.html&quot;&gt;Updated performance comparaison&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/380&quot;&gt;380&lt;/a&gt; Fix issue if yaml comment contains a ,” with no closing “&lt;/li&gt;

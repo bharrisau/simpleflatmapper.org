@@ -67,3 +67,6 @@ The Sfm non parallel escaped reading is even faster than the ConcurrentUnivocity
 
 Jackson is better than Univocity on escaped content, Univocity is better than Jackson on unescaped.
 For some reason the advantages that Jackson possesses disappear in the parallel treatment.
+
+It would be interested to compare different csv size so how it behaves. In a previous benchmark I did univocity did not do to good
+because of the chear amount of allocation it did. To come in the next few weeks...
