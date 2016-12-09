@@ -29,7 +29,7 @@ No annotation, no configuration needed.
 Default behavior can be changed programmatically.
 You can also extends the type mapping by providing converters
 
-The csv module also provides one of the [fastest java csv parser](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Csv-Performance), [updated raw results](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.4.csv).
+The csv module also provides one of the [fastest java csv parser](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Csv-Performance), [updated raw results](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5.csv).
 
 It can all run on java 6, 7, 8 and 9.
 
