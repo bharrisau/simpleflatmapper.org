@@ -5,9 +5,27 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Dec 2016 22:47:16 +0000</pubDate>
-    <lastBuildDate>Mon, 05 Dec 2016 22:47:16 +0000</lastBuildDate>
+    <pubDate>Fri, 09 Dec 2016 17:15:29 +0000</pubDate>
+    <lastBuildDate>Fri, 09 Dec 2016 17:15:29 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.5</title>
+        <description>&lt;h1 id=&quot;v35httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a35&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.5&quot;&gt;V3.5&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/380&quot;&gt;380&lt;/a&gt; Fix issue if yaml comment contains a ,” with no closing “&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/379&quot;&gt;379&lt;/a&gt; csv parser perf optimisation see &lt;a href=&quot;https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5.csv&quot;&gt;benchmark&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/377&quot;&gt;377&lt;/a&gt; refactor setter/getter to property upgrade&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 04 Dec 2016 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2016/12/04/v3.5.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2016/12/04/v3.5.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.4</title>
