@@ -4,7 +4,7 @@ layout: default
 
 
 
-SimpleFlatMapper [V{{ site.libraryVersion }}](2016/12/09/v3.5.html) provides a very fast and easy to use mapper for
+SimpleFlatMapper [V{{ site.libraryVersion }}](2016/12/09/v{{ site.libraryVersion }}.html) provides a very fast and easy to use mapper for
 
  * [Jdbc, aka micro ORM](0102-getting-started-jdbc.html)
  * [Csv](0101-getting-started-csv.html), [Excel spreadsheet](0105-getting-started-poi.html)
@@ -29,7 +29,7 @@ No annotation, no configuration needed.
 Default behavior can be changed programmatically.
 You can also extends the type mapping by providing converters
 
-The csv module also provides one of the [fastest java csv parser](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Csv-Performance), [updated raw results](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5.csv).
+The csv module also provides one of the [fastest java csv parser](12-csv-performance.html).
 
 It can all run on java 6, 7, 8 and 9.
 
