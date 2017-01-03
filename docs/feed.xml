@@ -5,9 +5,28 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Dec 2016 11:11:51 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Dec 2016 11:11:51 +0000</lastBuildDate>
+    <pubDate>Tue, 03 Jan 2017 07:07:13 +0000</pubDate>
+    <lastBuildDate>Tue, 03 Jan 2017 07:07:13 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.6</title>
+        <description>&lt;h1 id=&quot;v36httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a36&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.6&quot;&gt;V3.6&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/385&quot;&gt;385&lt;/a&gt; Allow to consumer yaml comment as part as cell flow&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/387&quot;&gt;387&lt;/a&gt; springjdbc, JdbcTemplateCrud should not throw SQLException&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/388&quot;&gt;388&lt;/a&gt; springjdbc, accept JdbcOperation instead of restricting to JdbcTemplate&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/389&quot;&gt;389&lt;/a&gt; springjdbc, DSL crud call with parameterized class&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/01/01/v3.6.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/01/01/v3.6.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.5</title>

@@ -6,6 +6,7 @@ title: Peformance comparaison
 [Raw Data](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5.csv)
 [Benchmark Code](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv)
 
+The benchmark ran on a P500 Lenovo, result might differ - and do, ran on old i5, Univocity is faster than sfm.
 
 The score are time in ms to parse the file, the lower the better. 
 Univocity is the benchmark with readInputOnSeparateThread set to false, 
