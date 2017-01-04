@@ -7,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Getting Started Sql2o</title>
+  <title>Getting Started JDBI</title>
   <meta name="description" content="">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://simpleflatmapper.org/0108-getting-started-sql2o.html">
+  <link rel="canonical" href="http://simpleflatmapper.org/0109-getting-started-jdbi.html">
   <link rel="alternate" type="application/rss+xml" title="SimpleFlatMapper" href="http://simpleflatmapper.org/feed.xml">
 </head>
 
@@ -168,14 +168,14 @@
 
 <main class="page-content" aria-label="Content">
     <div class="wrapper">
-        <h1 id="getting-started-sql2o">Getting Started Sql2o</h1>
+        <h1 id="getting-started-jdbi">Getting Started JDBI</h1>
 
-<p><a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-sql2o%7C3.7%7C"><img src="https://img.shields.io/maven-central/v/org.simpleflatmapper/sfm-sql2o.svg" alt="Maven Central" /></a>
-<a href="http://www.javadoc.io/doc/org.simpleflatmapper/sfm-sql2o"><img src="https://img.shields.io/badge/javadoc-3.7-blue.svg" alt="JavaDoc" /></a></p>
+<p><a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-jdbi%7C3.7%7C"><img src="https://img.shields.io/maven-central/v/org.simpleflatmapper/sfm-jdbi.svg" alt="Maven Central" /></a>
+<a href="http://www.javadoc.io/doc/org.simpleflatmapper/sfm-jdbi"><img src="https://img.shields.io/badge/javadoc-3.7-blue.svg" alt="JavaDoc" /></a></p>
 
 <h2 id="setting-up-the-environment">Setting up the environment</h2>
 
-<p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-sql2o%7C3.7%7C">Dependency</a> to your build.</p>
+<p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-jdbi%7C3.7%7C">Dependency</a> to your build.</p>
 
 <p>for Maven :</p>
 
@@ -183,7 +183,7 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>sfm-sql2o<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>sfm-jdbi<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>3.7<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
@@ -191,7 +191,7 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>sfm-sql2o<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>sfm-jdbi<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>3.7<span class="nt">&lt;/version&gt;</span>
     <span class="nt">&lt;classifier&gt;</span>jdk16<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
@@ -200,18 +200,48 @@
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>org.simpleflatmapper<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>sfm-sql2o<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>sfm-jdbi<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>3.7<span class="nt">&lt;/version&gt;</span>
     <span class="nt">&lt;classifier&gt;</span>jdk9ea<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
-<h2 id="sql2o-integration">SQL2o integration</h2>
+<h2 id="register-sfmresultsetmapperfactory">Register SfmResultSetMapperFactory</h2>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Query</span> <span class="n">query</span> <span class="o">=</span> <span class="n">sql2o</span><span class="o">.</span><span class="na">open</span><span class="o">().</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"select * from table"</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">setAutoDeriveColumnNames</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
-<span class="n">query</span><span class="o">.</span><span class="na">setResultSetHandlerFactoryBuilder</span><span class="o">(</span><span class="k">new</span> <span class="n">SfmResultSetHandlerFactoryBuilder</span><span class="o">());</span>
+<p>You can register sfm as a ResultSetMapperFactory, then using the mapTo - in place of map - it will 
+JDBI will look for a registered Factory and is the SFM one is the only or first one it will use it
+to map the object.</p>
 
-<span class="n">List</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">dbObjects</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">executeAndFetch</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">DBI</span> <span class="n">dbi</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DBI</span><span class="o">(</span><span class="n">datasource</span><span class="o">);</span>
+<span class="n">dbi</span><span class="o">.</span><span class="na">registerMapper</span><span class="o">(</span><span class="k">new</span> <span class="n">SfmResultSetMapperFactory</span><span class="o">());</span>
+<span class="n">Handle</span> <span class="n">handle</span> <span class="o">=</span> <span class="n">dbi</span><span class="o">.</span><span class="na">open</span><span class="o">();</span>
+<span class="k">try</span> <span class="o">{</span>
+    <span class="n">DbObject</span> <span class="n">dbObject</span> <span class="o">=</span> <span class="n">handle</span><span class="o">.</span><span class="na">createQuery</span><span class="o">(</span><span class="s">"SELECT * FROM T1"</span><span class="o">).</span><span class="na">mapTo</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">first</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+    <span class="n">handle</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="annotation-registermapperfactory">Annotation @RegisterMapperFactory</h2>
+
+<p>You can also annotate your method or dao interface with</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="nd">@RegisterMapperFactory</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="o">{</span><span class="n">SfmResultSetMapperFactory</span><span class="o">.</span><span class="na">class</span><span class="o">})</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MyDao</span>
+<span class="o">{</span>
+    <span class="nd">@SqlQuery</span><span class="o">(</span><span class="s">"SELECT * FROM TEST_DB_OBJECT where id = :id"</span><span class="o">)</span>
+    <span class="n">DbObject</span> <span class="nf">selectOne</span><span class="o">(</span><span class="nd">@Bind</span><span class="o">(</span><span class="s">"id"</span><span class="o">)</span> <span class="kt">long</span> <span class="n">id</span><span class="o">);</span>
+
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="annotation-sfmbind">Annotation @SfmBind</h2>
+
+<p>SFM also provide a binding annotation equivalent of @BindBean but using the SFM mapping.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">MyDao</span>
+<span class="o">{</span>
+    <span class="nd">@SqlUpdate</span><span class="o">(</span><span class="s">"insert into TEST_DB_OBJECT (id, name, email, creation_time, type_ordinal, type_name) values (:id, :name, :email, :creation_time, :type_ordinal, :type_name)"</span><span class="o">)</span>
+    <span class="kt">void</span> <span class="nf">insert</span><span class="o">(</span><span class="nd">@SfmBind</span><span class="o">(</span><span class="n">sqlTypes</span> <span class="o">=</span> <span class="o">{</span><span class="nd">@SqlType</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span><span class="s">"type_ordinal"</span><span class="o">,</span> <span class="n">type</span><span class="o">=</span><span class="n">Types</span><span class="o">.</span><span class="na">NUMERIC</span><span class="o">)})</span> <span class="n">DbObject</span> <span class="n">s</span><span class="o">);</span>
+<span class="o">}</span></code></pre></figure>
+
 
 
         

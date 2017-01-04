@@ -5,9 +5,25 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Jan 2017 07:07:59 +0000</pubDate>
-    <lastBuildDate>Tue, 03 Jan 2017 07:07:59 +0000</lastBuildDate>
+    <pubDate>Wed, 04 Jan 2017 00:04:56 +0000</pubDate>
+    <lastBuildDate>Wed, 04 Jan 2017 00:04:56 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.7</title>
+        <description>&lt;h1 id=&quot;v37httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a37&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.7&quot;&gt;V3.7&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/391&quot;&gt;391&lt;/a&gt; JDBI integration&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/390&quot;&gt;390&lt;/a&gt; Crud select should not use * but list the column&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 03 Jan 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/01/03/v3.7.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/01/03/v3.7.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.6</title>

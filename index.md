@@ -4,7 +4,7 @@ layout: default
 
 
 
-SimpleFlatMapper [V{{ site.libraryVersion }}](2016/12/09/v{{ site.libraryVersion }}.html) provides a very fast and easy to use mapper for
+SimpleFlatMapper [V{{ site.libraryVersion }}](2017/01/03/v{{ site.libraryVersion }}.html) provides a very fast and easy to use mapper for
 
  * [Jdbc, aka micro ORM](0102-getting-started-jdbc.html)
  * [Csv](0101-getting-started-csv.html), [Excel spreadsheet](0105-getting-started-poi.html)
