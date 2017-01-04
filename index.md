@@ -13,6 +13,7 @@ SimpleFlatMapper [V{{ site.libraryVersion }}](2017/01/03/v{{ site.libraryVersion
 It integrates with 
  * [jOOQ](0106-getting-started-jooq.html)
  * [Spring Jdbc](0104-getting-started-springjdbc.html)
+ * [JDBI](0109-getting-started-jdbi.html)
  * [Sql2o](0108-getting-started-sql2o.html)
  * [QueryDSL](0107-getting-started-querydsl.html)
  
