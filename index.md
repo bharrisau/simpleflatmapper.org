@@ -7,13 +7,14 @@ layout: default
 SimpleFlatMapper [V{{ site.libraryVersion }}]({{ post.url }}) provides a very fast and easy to use mapper for
 
  * [Jdbc, aka micro ORM](0102-getting-started-jdbc.html)
- * [Csv](0101-getting-started-csv.html), [Excel spreadsheet](0105-getting-started-poi.html)
+ * [Csv Mapper](0101-getting-started-csv.html#mapping-a-csv-to-an-object) with its own [Csv Parser](reading-a-csv-file) 
+ * [Excel spreadsheet](0105-getting-started-poi.html)
  * [Cassandra Datastax](0103-getting-started-datastax.html)
  
 It integrates with 
  * [jOOQ](0106-getting-started-jooq.html)
  * [Spring Jdbc](0104-getting-started-springjdbc.html)
- * [JDBI](0109-getting-started-jdbi.html)
+ * [JDBI ResultSetMapper and Binder](0109-getting-started-jdbi.html)
  * [Sql2o](0108-getting-started-sql2o.html)
  * [QueryDSL](0107-getting-started-querydsl.html)
  
@@ -28,7 +29,7 @@ The mapper [supports](0201-property-mapping.html)
  
 No annotation, no configuration needed. 
 Default behavior can be changed programmatically.
-You can also extends the type mapping by providing converters
+You can also extends the type mapping by providing [converters](0202-converters.html)
 
 The csv module also provides one of the [fastest java csv parser](12-csv-performance.html).
 
@@ -36,7 +37,15 @@ It can all run on java 6, 7, 8 and 9.
 
 Some sample code :
 
-# Jdbc
+# Csv Mapper
+{% highlight java %}
+CsvParser
+    .mapTo(MyObject.class)
+    .stream(reader)
+    .forEach(System.out::println);
+{% endhighlight %}
+
+# Jdbc Mapper
 {% highlight java %}
 JdbcMapper<MyObject> mapper =
     JdbcMapperFactory.newInstance().newMapper(MyObject.class);
@@ -51,13 +60,6 @@ public void findAll(Consumer<MyObject> consumer) throws SQLException {
 }
 {% endhighlight %}
 
-# Csv
-{% highlight java %}
-CsvParser
-    .mapTo(MyObject.class)
-    .stream(reader)
-    .forEach(System.out::println);
-{% endhighlight %}
 
 
 
