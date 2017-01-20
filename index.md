@@ -19,12 +19,10 @@ It integrates with
  * [QueryDSL](0107-getting-started-querydsl.html)
  
 The mapper [supports](0201-property-mapping.html)   
- * Constructor injection
- * Setter injection
- * Public Field injection
+ * Constructor, Setter and Public field injection
  * [Builder Pattern](0201-property-mapping.html#builder-pattern) - like [Immutables](http://immutables.github.io/) -
  * Deep object structure
- * Tuples including [jOOL](https://github.com/jOOQ/jOOL) tuples ans [Fasttuple](https://github.com/boundary/fasttuple)
+ * Tuples including [jOOL](https://github.com/jOOQ/jOOL) tuples and [Fasttuple](https://github.com/boundary/fasttuple)
  * List, Array and Map
  
 No annotation, no configuration needed. 
