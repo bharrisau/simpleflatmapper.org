@@ -9,6 +9,7 @@ module: springjdbc
 
 {% include maven_dependency.md %}
 
+# Test
 
 See [JdbcTemplateMapperFactoryTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-springjdbc/src/test/java/org/simpleflatmapper/jdbc/spring/test/JdbcTemplateMapperFactoryTest.java) for more examples.
 
