@@ -17,12 +17,12 @@ See [JdbcTemplateMapperFactoryTest](https://github.com/arnaudroger/SimpleFlatMap
 
 {% highlight java %}
 class MyDao {
-	private final RowMapper<DbObject> rowMapper =
-		JdbcTemplateMapperFactory.newInstance().newRowMapper(DbObject.class);
-		
-	public List<DbObject> findAll() {
-		 return template.query(DbHelper.TEST_DB_OBJECT_QUERY, rowMapper);
-	}
+    private final RowMapper<DbObject> rowMapper =
+        JdbcTemplateMapperFactory.newInstance().newRowMapper(DbObject.class);
+        
+    public List<DbObject> findAll() {
+        return template.query(DbHelper.TEST_DB_OBJECT_QUERY, rowMapper);
+    }
 }
 {% endhighlight %}
 
@@ -30,21 +30,21 @@ class MyDao {
 
 {% highlight java %}
 class MyDao {
-	private final SqlParameterSourceFactory<DbObject> parameterSourceFactory =
-		JdbcTemplateMapperFactory.newInstance().newSqlParameterSourceFactory(DbObject.class);
+    private final SqlParameterSourceFactory<DbObject> parameterSourceFactory =
+        JdbcTemplateMapperFactory.newInstance().newSqlParameterSourceFactory(DbObject.class);
 
-	public void insertObject(DbObject object) {
+    public void insertObject(DbObject object) {
         template.update(
             "INSERT INTO DBOBJECTS(id, name, email) VALUES(:id, :name, :email)",
             parameterSourceFactory.newSqlParameterSource(object));
 
-	}
+    }
 
-	public void insertObjects(Collection<DbObject> objects) {
+    public void insertObjects(Collection<DbObject> objects) {
         template.batchUpdate(
             "INSERT INTO DBOBJECTS(id, name, email) VALUES(:id, :name, :email)",
             parameterSourceFactory.newSqlParameterSources(objects));
-	}
+    }
 }
 {% endhighlight %}
 
@@ -53,22 +53,22 @@ class MyDao {
 {% highlight java %}
 class MyDao {
 
-	JdbcTemplateCrud<DbObject, Long> objectCrud;
+    JdbcTemplateCrud<DbObject, Long> objectCrud;
 
-	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
-		objectCrud =
-			JdbcTemplateMapperFactory
-				.newInstance()
-				.<DbObject, Long>crud(DbObject.class, Long.class)
-				.to(template, "TEST_DB_OBJECT");
-	}
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+        objectCrud =
+            JdbcTemplateMapperFactory
+                .newInstance()
+                .<DbObject, Long>crud(DbObject.class, Long.class)
+                .to(template, "TEST_DB_OBJECT");
+    }
 
-	public void insertObject(DbObject object) {
+    public void insertObject(DbObject object) {
         crud.create(object);
-	}
+    }
 
-	public void insertObjects(Collection<DbObject> objects) {
+    public void insertObjects(Collection<DbObject> objects) {
         crud.create(objects);
-	}
+    }
 }
 {% endhighlight %}
