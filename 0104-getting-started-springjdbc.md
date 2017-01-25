@@ -9,12 +9,8 @@ module: springjdbc
 
 {% include maven_dependency.md %}
 
-# Test
-
-See [JdbcTemplateMapperFactoryTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-springjdbc/src/test/java/org/simpleflatmapper/jdbc/spring/test/JdbcTemplateMapperFactoryTest.java) for more examples.
 
 # RowMapper
-
 
 {% highlight java %}
 class MyDao {
@@ -77,3 +73,7 @@ class MyDao {
     }
 }
 {% endhighlight %}
+
+# More examples
+
+See [JdbcTemplateMapperFactoryTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-springjdbc/src/test/java/org/simpleflatmapper/jdbc/spring/test/JdbcTemplateMapperFactoryTest.java) for more examples.
