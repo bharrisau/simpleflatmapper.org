@@ -163,7 +163,7 @@ crud.create(connection, object, (key) -> object.setId(key));
 {% endhighlight %}
 
 
-see [CrudTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm/src/test/java/org/sfm/jdbc/CrudTest.java) for more samples
+see [CrudTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-jdbc/src/test/java/org/simpleflatmapper/jdbc/test/CrudTest.java) for more samples
 
 
 ## NamedQuery

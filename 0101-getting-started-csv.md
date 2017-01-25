@@ -16,7 +16,7 @@ The [CsvParser](http://static.javadoc.io/org.simpleflatmapper/sfm-csv/{% include
 via a [CheckedConsumer](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/CheckedConsumer.html) callback, 
 a Iterator or a Stream of String[]
 
-[Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/samples/GettingStartedCsv_csvParser.java)
+[Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/test/samples/GettingStartedCsv_csvParser.java)
 {% highlight java%}
 // Callback
 CsvParser
@@ -43,7 +43,7 @@ a Iterator or a Stream of your type.
 The mapper will use the header row - the first one - to match against the property of the object. You can also specify the headers
 manually if there none or if you want to skip them.
 
-[Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/samples/GettingStartedCsv_csvMapper.java)
+[Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/test/samples/GettingStartedCsv_csvMapper.java)
 {% highlight java %}
 // Callback
 CsvParser
@@ -81,7 +81,7 @@ The [CsvWriter](http://static.javadoc.io/org.simpleflatmapper/sfm-csv/{% include
 If no headers are specified it will generate a list of headers from the properties of the object. Though it is
 better to specify the headers manually.
 
-[Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/samples/GettingStartedCsv_csvWriter.java)
+[Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/test/samples/GettingStartedCsv_csvWriter.java)
 {% highlight java%}
 // better to cache the dsl with the from 
 // to avoid recomputing the object metadata
