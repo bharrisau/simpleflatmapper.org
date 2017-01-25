@@ -222,18 +222,22 @@
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">MyDao</span> <span class="o">{</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="n">SqlParameterSourceFactory</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">parameterSourceFactory</span> <span class="o">=</span>
-        <span class="n">JdbcTemplateMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">newSqlParameterSourceFactory</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="n">JdbcTemplateMapperFactory</span>
+            <span class="o">.</span><span class="na">newInstance</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">newSqlParameterSourceFactory</span><span class="o">(</span><span class="n">DbObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">insertObject</span><span class="o">(</span><span class="n">DbObject</span> <span class="n">object</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">template</span><span class="o">.</span><span class="na">update</span><span class="o">(</span>
-            <span class="s">"INSERT INTO DBOBJECTS(id, name, email) VALUES(:id, :name, :email)"</span><span class="o">,</span>
+            <span class="s">"INSERT INTO DBOBJECTS(id, name, email)"</span>
+            <span class="o">+</span> <span class="s">" VALUES(:id, :name, :email)"</span><span class="o">,</span>
             <span class="n">parameterSourceFactory</span><span class="o">.</span><span class="na">newSqlParameterSource</span><span class="o">(</span><span class="n">object</span><span class="o">));</span>
 
     <span class="o">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">insertObjects</span><span class="o">(</span><span class="n">Collection</span><span class="o">&lt;</span><span class="n">DbObject</span><span class="o">&gt;</span> <span class="n">objects</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">template</span><span class="o">.</span><span class="na">batchUpdate</span><span class="o">(</span>
-            <span class="s">"INSERT INTO DBOBJECTS(id, name, email) VALUES(:id, :name, :email)"</span><span class="o">,</span>
+            <span class="s">"INSERT INTO DBOBJECTS(id, name, email)"</span>
+            <span class="o">+</span> <span class="s">"VALUES(:id, :name, :email)"</span><span class="o">,</span>
             <span class="n">parameterSourceFactory</span><span class="o">.</span><span class="na">newSqlParameterSources</span><span class="o">(</span><span class="n">objects</span><span class="o">));</span>
     <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
