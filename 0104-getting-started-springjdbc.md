@@ -9,33 +9,25 @@ module: springjdbc
 
 {% include maven_dependency.md %}
 
-## Create RowMapper
 
 See [JdbcTemplateMapperFactoryTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-springjdbc/src/test/java/org/simpleflatmapper/jdbc/spring/test/JdbcTemplateMapperFactoryTest.java) for more examples.
+
+# RowMapper
+
 
 {% highlight java %}
 class MyDao {
 	private final RowMapper<DbObject> rowMapper =
 		JdbcTemplateMapperFactory.newInstance().newRowMapper(DbObject.class);
 		
-	private final ResultSetExtractorImpl<List<DbObject>> resultSetExtractor = 
-	    JdbcTemplateMapperFactory.newInstance().newResultSetExtractor(DbObject.class);
-
     // row mapper
 	public void doSomething() {
 		List<DbObject> results = template.query(DbHelper.TEST_DB_OBJECT_QUERY, rowMapper);
 	}
-
-    // result set extractor with consumer
-	public void doSomethingElse() {
-		 template
-		 	.query(TEST_DB_OBJECT_QUERY,
-		 		parameterGetterMap.newResultSetExtractor((o) -> System.out.println(o.toString())));
-	}
 }
 {% endhighlight %}
 
-## SqlParameterSource
+# SqlParameterSource
 
 {% highlight java %}
 class MyDao {
@@ -57,7 +49,7 @@ class MyDao {
 }
 {% endhighlight %}
 
-## Crud
+# Crud
 
 {% highlight java %}
 class MyDao {
