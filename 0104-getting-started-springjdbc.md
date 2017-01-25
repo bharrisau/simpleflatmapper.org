@@ -20,9 +20,8 @@ class MyDao {
 	private final RowMapper<DbObject> rowMapper =
 		JdbcTemplateMapperFactory.newInstance().newRowMapper(DbObject.class);
 		
-    // row mapper
-	public void doSomething() {
-		List<DbObject> results = template.query(DbHelper.TEST_DB_OBJECT_QUERY, rowMapper);
+	public List<DbObject> findAll() {
+		 return template.query(DbHelper.TEST_DB_OBJECT_QUERY, rowMapper);
 	}
 }
 {% endhighlight %}
