@@ -103,14 +103,18 @@
     <div class="wrapper">
         <p><a href="https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv">Benchmark Code</a></p>
 
-<h1 id="csv-parsing-unescapedescaped-and-parallel">Csv Parsing Unescaped/Escaped and Parallel</h1>
+<p>The benchmarks ran on a P500 Lenovo, result might differ - and do, ran on old i5, Univocity is faster than sfm.</p>
 
-<p>The benchmark ran on a P500 Lenovo, result might differ - and do, ran on old i5, Univocity is faster than sfm.</p>
+<p><a href="#csv-parsing-unescapedescaped-and-parallel">Unescaped/Escaped/Parallel</a>
+<a href="#number-of-rows-effect-on-parsingmapping-no-quotes">Number of rows effect</a></p>
 
-<p>The score are time in ms to parse the file, the lower the better. 
-Univocity is the benchmark with readInputOnSeparateThread set to false, 
+<p>Univocity is the benchmark with readInputOnSeparateThread set to false, 
 ConcurrentUnivocity has that flag set to true. 
 All the parallel test appart from ConcurrentUnivocity uses a <a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java">ParallelReader</a>.</p>
+
+<h1 id="csv-parsing-unescapedescaped-and-parallel">Csv Parsing Unescaped/Escaped and Parallel</h1>
+
+<p>The score are time in ms to parse the file, the lower the better.</p>
 
 <p>Why only those 3? because the other that I tested are pretty slow in compaison. If you think your csv parser is worth benchmark <a href="https://github.com/arnaudroger/mapping-benchmark/issues/new">Open an issue</a>.</p>
 
@@ -288,7 +292,7 @@ All the parallel test appart from ConcurrentUnivocity uses a <a href="https://gi
 
 <p><img src="/assets/perf/3.5/par_quotes.png" alt="Parce csv, Parallel reader, with quotes" /></p>
 
-<h1 id="summary">Summary</h1>
+<h2 id="summary">Summary</h2>
 
 <p>Sfm is wining on all measures appart from the 90th percentile on unescaped parallel - That is likely link to the implementation of the ParallelReader.
 The Sfm non parallel escaped reading is even faster than the ConcurrentUnivocity. and only 60ms behind on the non escaped content - might not worth wasting a cpu.</p>
@@ -300,7 +304,7 @@ For some reason the advantages that Jackson possesses disappear in the parallel 
 
 <p><a href="https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5-rows.csv">Raw Data</a></p>
 
-<p>All chart represent the time in us taken to read a file with the specified number of rows.</p>
+<p>All chart represent the time in us taken to read a file with the specified number of rows, the lower the better.</p>
 <ul>
   <li>Orange csv mapping</li>
   <li>Brown csv mapping with parallel reader or concurrent univocity</li>

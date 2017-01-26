@@ -4,14 +4,20 @@ title: Peformance comparaison
 ---
 [Benchmark Code](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv)
 
-# Csv Parsing Unescaped/Escaped and Parallel
+The benchmarks ran on a P500 Lenovo, result might differ - and do, ran on old i5, Univocity is faster than sfm.
 
-The benchmark ran on a P500 Lenovo, result might differ - and do, ran on old i5, Univocity is faster than sfm.
 
-The score are time in ms to parse the file, the lower the better. 
+[Unescaped/Escaped/Parallel](#csv-parsing-unescapedescaped-and-parallel)
+[Number of rows effect](#number-of-rows-effect-on-parsingmapping-no-quotes)
+
 Univocity is the benchmark with readInputOnSeparateThread set to false, 
 ConcurrentUnivocity has that flag set to true. 
 All the parallel test appart from ConcurrentUnivocity uses a [ParallelReader](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java).
+
+
+# Csv Parsing Unescaped/Escaped and Parallel
+
+The score are time in ms to parse the file, the lower the better. 
 
 Why only those 3? because the other that I tested are pretty slow in compaison. If you think your csv parser is worth benchmark [Open an issue](https://github.com/arnaudroger/mapping-benchmark/issues/new).
 
@@ -62,7 +68,7 @@ ConcurrentUnivocity uses readInputOnSeparateThread set to true and no ParallelRe
 ![Parce csv, Parallel reader, with quotes](/assets/perf/3.5/par_quotes.png)
 
 
-# Summary 
+## Summary 
 
 Sfm is wining on all measures appart from the 90th percentile on unescaped parallel - That is likely link to the implementation of the ParallelReader.
 The Sfm non parallel escaped reading is even faster than the ConcurrentUnivocity. and only 60ms behind on the non escaped content - might not worth wasting a cpu.
@@ -76,11 +82,12 @@ For some reason the advantages that Jackson possesses disappear in the parallel 
 [Raw Data](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5-rows.csv)
 
 
-All chart represent the time in us taken to read a file with the specified number of rows.
+All chart represent the time in us taken to read a file with the specified number of rows, the lower the better.
 * Orange csv mapping
 * Brown csv mapping with parallel reader or concurrent univocity
 * blue csv parser
 * dark blue csv parser with parallel reader or concurrent univocity
+
 
 ## 1 row
 ![1 Row](/assets/perf/3.5/row_1.png)
