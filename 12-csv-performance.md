@@ -98,3 +98,5 @@ Using parallel for small size file is a bad idea.
 
 Jackson mapper underperform and lag behind from 1000 rows. Sfm mapper is clearly in front on most sizes from 1000.
 
+Also surprisingly jackson perform slower with the parallel reader that would need more investigation to 
+identify where the contention comes from.
