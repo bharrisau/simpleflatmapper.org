@@ -74,6 +74,8 @@ For some reason the advantages that Jackson possesses disappear in the parallel 
 # Number of rows effect on parsing/mapping no quotes
 
 [Raw Data](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5-rows.csv)
+
+
 All chart represent the time in us taken to read a file with the specified number of rows.
 * Orange csv mapping
 * Brown csv mapping with parallel reader or concurrent univocity
