@@ -298,7 +298,14 @@ For some reason the advantages that Jackson possesses disappear in the parallel 
 
 <h1 id="number-of-rows-effect-on-parsingmapping-no-quotes">Number of rows effect on parsing/mapping no quotes</h1>
 
-<p><a href="https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5-rows.csv">Raw Data</a></p>
+<p><a href="https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5-rows.csv">Raw Data</a>
+All chart represent the time in us taken to read a file with the specified number of rows.</p>
+<ul>
+  <li>Orange csv mapping</li>
+  <li>Brown csv mapping with parallel reader or concurrent univocity</li>
+  <li>blue csv parser</li>
+  <li>dark blue csv parser with parallel reader or concurrent univocity</li>
+</ul>
 
 <h2 id="row">1 row</h2>
 <p><img src="/assets/perf/3.5/row_1.png" alt="1 Row" /></p>
