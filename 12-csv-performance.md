@@ -2,11 +2,9 @@
 layout: default
 title: Peformance comparaison
 ---
+[Benchmark Code](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv)
 
 # Csv Parsing Unescaped/Escaped and Parallel
-
-[Raw Data](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5.csv)
-[Benchmark Code](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv)
 
 The benchmark ran on a P500 Lenovo, result might differ - and do, ran on old i5, Univocity is faster than sfm.
 
@@ -74,6 +72,8 @@ For some reason the advantages that Jackson possesses disappear in the parallel 
 
 
 # Number of rows effect on parsing/mapping no quotes
+
+[Raw Data](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5-rows.csv)
 
 ## 1 row
 ![1 Row](/assets/perf/3.5/row_1.png)
