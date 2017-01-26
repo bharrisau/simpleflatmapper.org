@@ -7,8 +7,8 @@ title: Peformance comparaison
 The benchmarks ran on a P500 Lenovo, result might differ - and do, ran on old i5, Univocity is faster than sfm.
 
 
-[Unescaped/Escaped/Parallel](#csv-parsing-unescapedescaped-and-parallel)
-[Number of rows effect](#number-of-rows-effect-on-parsingmapping-no-quotes)
+* [Unescaped/Escaped/Parallel](#csv-parsing-unescapedescaped-and-parallel)
+* [Number of rows effect](#number-of-rows-effect-on-parsingmapping-no-quotes)
 
 Univocity is the benchmark with readInputOnSeparateThread set to false, 
 ConcurrentUnivocity has that flag set to true. 
