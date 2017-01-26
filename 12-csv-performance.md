@@ -3,6 +3,8 @@ layout: default
 title: Peformance comparaison
 ---
 
+# Csv Parsing Unescaped/Escaped and Parallel
+
 [Raw Data](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.5.csv)
 [Benchmark Code](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv)
 
@@ -15,7 +17,7 @@ All the parallel test appart from ConcurrentUnivocity uses a [ParallelReader](ht
 
 Why only those 3? because the other that I tested are pretty slow in compaison. If you think your csv parser is worth benchmark [Open an issue](https://github.com/arnaudroger/mapping-benchmark/issues/new).
 
-# Parsing a unescaped [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz)
+## Parsing a unescaped [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz)
 
 | Parser        | avgt | 90th | 95th | 99th | 
 | ------------- | ----:| -----:| -----:| -----:|
@@ -25,7 +27,7 @@ Why only those 3? because the other that I tested are pretty slow in compaison. 
 
 ![Parce csv no quotes](/assets/perf/3.5/no_quotes.png)
 
-# Parsing a escaped version of [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz)
+## Parsing a escaped version of [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz)
 
 | Parser        | avgt | 90th | 95th | 99th | 
 | ------------- | ----:| -----:| -----:| -----:|
@@ -35,7 +37,7 @@ Why only those 3? because the other that I tested are pretty slow in compaison. 
 
 ![Parce csv with quotes](/assets/perf/3.5/quotes.png)
 
-# Parsing a unescaped [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz) with [ParallelReader](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java)
+## Parsing a unescaped [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz) with [ParallelReader](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java)
 
 ConcurrentUnivocity uses readInputOnSeparateThread set to true and no ParallelReader.
 
@@ -48,7 +50,7 @@ ConcurrentUnivocity uses readInputOnSeparateThread set to true and no ParallelRe
 
 ![Parce csv, Parallel reader, no quotes](/assets/perf/3.5/par_noquotes.png)
 
-# Parsing a escaped version of [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz) with [ParallelReader](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java)
+## Parsing a escaped version of [Csv](http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz) with [ParallelReader](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java)
 
 ConcurrentUnivocity uses readInputOnSeparateThread set to true and no ParallelReader.
 
@@ -61,7 +63,8 @@ ConcurrentUnivocity uses readInputOnSeparateThread set to true and no ParallelRe
 
 ![Parce csv, Parallel reader, with quotes](/assets/perf/3.5/par_quotes.png)
 
-# Summary
+
+# Summary 
 
 Sfm is wining on all measures appart from the 90th percentile on unescaped parallel - That is likely link to the implementation of the ParallelReader.
 The Sfm non parallel escaped reading is even faster than the ConcurrentUnivocity. and only 60ms behind on the non escaped content - might not worth wasting a cpu.
@@ -69,5 +72,29 @@ The Sfm non parallel escaped reading is even faster than the ConcurrentUnivocity
 Jackson is better than Univocity on escaped content, Univocity is better than Jackson on unescaped.
 For some reason the advantages that Jackson possesses disappear in the parallel treatment.
 
-It would be interested to compare different csv size so how it behaves. In a previous benchmark I did univocity did not do to good
-because of the chear amount of allocation it did. To come in the next few weeks...
+
+# Number of rows effect on parsing/mapping no quotes
+
+## 1 row
+![1 Row](/assets/perf/3.5/row_1.png)
+
+## 10 rows
+![10 Row](/assets/perf/3.5/row_10.png)
+
+## 1000 rows
+![1000 Row](/assets/perf/3.5/row_1000.png)
+
+## 100,000 rows
+![100,000 Row](/assets/perf/3.5/row_100000.png)
+
+## 1.5m rows
+![1.5m Row](/assets/perf/3.5/row_1_5m.png)
+
+## Summary
+
+Sfm and Jackson have similar performances with small size files, Univocity has a fix cost that show on those file
+make it not very suitable for those.
+Using parallel for small size file is a bad idea.
+
+Jackson mapper underperform and lag behind from 1000 rows. Sfm mapper is clearly in front on most sizes from 1000.
+
