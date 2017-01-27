@@ -5,13 +5,13 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Jan 2017 22:39:04 +0000</pubDate>
-    <lastBuildDate>Thu, 26 Jan 2017 22:39:04 +0000</lastBuildDate>
+    <pubDate>Fri, 27 Jan 2017 16:20:07 +0000</pubDate>
+    <lastBuildDate>Fri, 27 Jan 2017 16:20:07 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
         <title>Release v3.7</title>
-        <description>&lt;h1 id=&quot;v37httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a37&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.7&quot;&gt;V3.7&lt;/a&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;v37&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.7&quot;&gt;V3.7&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/391&quot;&gt;391&lt;/a&gt; JDBI integration&lt;/li&gt;
@@ -27,7 +27,7 @@
     
       <item>
         <title>Release v3.6</title>
-        <description>&lt;h1 id=&quot;v36httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a36&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.6&quot;&gt;V3.6&lt;/a&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;v36&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.6&quot;&gt;V3.6&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/385&quot;&gt;385&lt;/a&gt; Allow to consumer yaml comment as part as cell flow&lt;/li&gt;
@@ -46,7 +46,7 @@
     
       <item>
         <title>Release v3.5</title>
-        <description>&lt;h1 id=&quot;v35httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a35&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.5&quot;&gt;V3.5&lt;/a&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;v35&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.5&quot;&gt;V3.5&lt;/a&gt;&lt;/h1&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://simpleflatmapper.org/12-csv-performance.html&quot;&gt;Updated performance comparaison&lt;/a&gt;&lt;/p&gt;
 
@@ -66,7 +66,7 @@
     
       <item>
         <title>Release v3.4</title>
-        <description>&lt;h1 id=&quot;v34httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a34&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.4&quot;&gt;V3.4&lt;/a&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;v34&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.4&quot;&gt;V3.4&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/370&quot;&gt;370&lt;/a&gt; csv parser perf optimisation see &lt;a href=&quot;https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.4.csv&quot;&gt;benchmark&lt;/a&gt;&lt;/li&gt;
@@ -84,7 +84,7 @@
     
       <item>
         <title>Release v3.3</title>
-        <description>&lt;h1 id=&quot;v33httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a33&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.3&quot;&gt;V3.3&lt;/a&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;v33&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.3&quot;&gt;V3.3&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/368&quot;&gt;368&lt;/a&gt; wrong scope for objenesis dependency&lt;/li&gt;
@@ -105,7 +105,7 @@
         <description>&lt;p&gt;An objenesis dependency was introduce with the wrong scope, upgrade to 3.3 or 
 exclude objenesis.&lt;/p&gt;
 
-&lt;h1 id=&quot;v32httpsgithubcomarnaudrogersimpleflatmapperissuesqmilestone3a32&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.2&quot;&gt;V3.2&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;v32&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.2&quot;&gt;V3.2&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/357&quot;&gt;357&lt;/a&gt; use maven-compiler-plugin offical jigsaw support&lt;/li&gt;
@@ -140,7 +140,7 @@ only one cell ‘cell1”,cell2’&lt;/p&gt;
     
       <item>
         <title>Release v3.0</title>
-        <description>&lt;h1 id=&quot;how-to-migrate-to-v3011-v3-migrationhtml&quot;&gt;&lt;a href=&quot;/11-v3-migration.html&quot;&gt;How to Migrate to v3.0&lt;/a&gt;&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;how-to-migrate-to-v30&quot;&gt;&lt;a href=&quot;/11-v3-migration.html&quot;&gt;How to Migrate to v3.0&lt;/a&gt;&lt;/h1&gt;
 
 &lt;h1 id=&quot;v30-mains-was-to-prepare-for-java-9-jigsaw&quot;&gt;V3.0 mains was to prepare for java 9 jigsaw.&lt;/h1&gt;
 

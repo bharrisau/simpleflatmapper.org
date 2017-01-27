@@ -3,18 +3,38 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Peformance comparaison</title>
-  <meta name="description" content="">
+    <!-- Begin Jekyll SEO tag v2.0.0 -->
+<title>Peformance comparaison - SimpleFlatMapper</title>
+<meta property="og:title" content="Peformance comparaison" />
+<meta name="description" content="SimpleFlatMapper java library fast csv parser performance comparaison jackson-csv univocity" />
+<meta property="og:description" content="SimpleFlatMapper java library fast csv parser performance comparaison jackson-csv univocity" />
+<link rel="canonical" href="http://simpleflatmapper.org/12-csv-performance.html" />
+<meta property="og:url" content="http://simpleflatmapper.org/12-csv-performance.html" />
+<meta property="og:site_name" content="SimpleFlatMapper" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@arnaudroger" />
+<meta name="twitter:creator" content="@Arnaud Roger" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebPage",
+    "headline": "Peformance comparaison",
+    "description": "SimpleFlatMapper java library fast csv parser performance comparaison jackson-csv univocity",
+    "url": "http://simpleflatmapper.org/12-csv-performance.html"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
 
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://simpleflatmapper.org/12-csv-performance.html">
-  <link rel="alternate" type="application/rss+xml" title="SimpleFlatMapper" href="http://simpleflatmapper.org/feed.xml">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="canonical" href="/12-csv-performance.html">
+    <link rel="alternate" type="application/rss+xml" title="SimpleFlatMapper" href="/feed.xml">
+
+    
 </head>
-
 
 <body>
 
@@ -120,7 +140,7 @@ All the parallel test appart from ConcurrentUnivocity uses a <a href="https://gi
 
 <p>Why only those 3? because the other that I tested are pretty slow in compaison. If you think your csv parser is worth benchmark <a href="https://github.com/arnaudroger/mapping-benchmark/issues/new">Open an issue</a>.</p>
 
-<h2 id="parsing-a-unescaped-csvhttpwwwmaxmindcomdownloadworldcitiesworldcitiespoptxtgz">Parsing a unescaped <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a></h2>
+<h2 id="parsing-a-unescaped-csv">Parsing a unescaped <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a></h2>
 
 <table>
   <thead>
@@ -159,7 +179,7 @@ All the parallel test appart from ConcurrentUnivocity uses a <a href="https://gi
 
 <p><img src="/assets/perf/3.5/no_quotes.png" alt="Parce csv no quotes" /></p>
 
-<h2 id="parsing-a-escaped-version-of-csvhttpwwwmaxmindcomdownloadworldcitiesworldcitiespoptxtgz">Parsing a escaped version of <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a></h2>
+<h2 id="parsing-a-escaped-version-of-csv">Parsing a escaped version of <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a></h2>
 
 <table>
   <thead>
@@ -198,7 +218,7 @@ All the parallel test appart from ConcurrentUnivocity uses a <a href="https://gi
 
 <p><img src="/assets/perf/3.5/quotes.png" alt="Parce csv with quotes" /></p>
 
-<h2 id="parsing-a-unescaped-csvhttpwwwmaxmindcomdownloadworldcitiesworldcitiespoptxtgz-with-parallelreaderhttpsgithubcomarnaudrogersimpleflatmapperblobmastersfm-utilsrcmainjavaorgsimpleflatmapperutilparallelreaderjava">Parsing a unescaped <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a> with <a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java">ParallelReader</a></h2>
+<h2 id="parsing-a-unescaped-csv-with-parallelreader">Parsing a unescaped <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a> with <a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java">ParallelReader</a></h2>
 
 <p>ConcurrentUnivocity uses readInputOnSeparateThread set to true and no ParallelReader.</p>
 
@@ -246,7 +266,7 @@ All the parallel test appart from ConcurrentUnivocity uses a <a href="https://gi
 
 <p><img src="/assets/perf/3.5/par_noquotes.png" alt="Parce csv, Parallel reader, no quotes" /></p>
 
-<h2 id="parsing-a-escaped-version-of-csvhttpwwwmaxmindcomdownloadworldcitiesworldcitiespoptxtgz-with-parallelreaderhttpsgithubcomarnaudrogersimpleflatmapperblobmastersfm-utilsrcmainjavaorgsimpleflatmapperutilparallelreaderjava">Parsing a escaped version of <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a> with <a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java">ParallelReader</a></h2>
+<h2 id="parsing-a-escaped-version-of-csv-with-parallelreader">Parsing a escaped version of <a href="http://www.maxmind.com/download/worldcities/worldcitiespop.txt.gz">Csv</a> with <a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-util/src/main/java/org/simpleflatmapper/util/ParallelReader.java">ParallelReader</a></h2>
 
 <p>ConcurrentUnivocity uses readInputOnSeparateThread set to true and no ParallelReader.</p>
 
@@ -314,19 +334,19 @@ For some reason the advantages that Jackson possesses disappear in the parallel 
   <li>dark blue csv parser with parallel reader or concurrent univocity</li>
 </ul>
 
-<h2 id="row">1 row</h2>
+<h2 id="1-row">1 row</h2>
 <p><img src="/assets/perf/3.5/row_1.png" alt="1 Row" /></p>
 
-<h2 id="rows">10 rows</h2>
+<h2 id="10-rows">10 rows</h2>
 <p><img src="/assets/perf/3.5/row_10.png" alt="10 Row" /></p>
 
-<h2 id="rows-1">1000 rows</h2>
+<h2 id="1000-rows">1000 rows</h2>
 <p><img src="/assets/perf/3.5/row_1000.png" alt="1000 Row" /></p>
 
-<h2 id="rows-2">100,000 rows</h2>
+<h2 id="100000-rows">100,000 rows</h2>
 <p><img src="/assets/perf/3.5/row_100000.png" alt="100,000 Row" /></p>
 
-<h2 id="m-rows">1.5m rows</h2>
+<h2 id="15m-rows">1.5m rows</h2>
 <p><img src="/assets/perf/3.5/row_1_5m.png" alt="1.5m Row" /></p>
 
 <h2 id="summary-1">Summary</h2>
@@ -359,7 +379,7 @@ identify where the contention comes from.</p>
 
             <div class="footer-col footer-col-2">
                 <ul class="social-media-list">
-                    <a href="https://github.com/arnaudroger/SimpleFlatMapper"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+                    <a href="https://github.com/arnaudroger/SimpleFlatMapper"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
 </span><span class="username">arnaudroger/SimpleFlatMapper</span></a>
                 </ul>
             </div>
