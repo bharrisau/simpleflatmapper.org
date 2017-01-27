@@ -3,6 +3,7 @@ layout: default
 title: Converters
 short_title: Converters
 category: docs
+description: SimpleFlatMapper java library converters
 ---
 
 When mapping a property sfm will looking for a getter/setter from the object

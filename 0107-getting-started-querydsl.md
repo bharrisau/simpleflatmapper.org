@@ -4,6 +4,7 @@ title: Getting Started QueryDsl
 short_title: QueryDsl
 category: getting_started
 module: querydsl
+description: SimpleFlatMapper java querydsl projection
 ---
 # Getting Started QueryDsl
 

@@ -4,6 +4,7 @@ title: Getting Started Jdbc
 short_title: Jdbc
 category: getting_started
 module: jdbc
+description: SimpleFlatMapper java micro orm jdbc ResultSet mapper
 ---
 
 # Getting Started Jdbc

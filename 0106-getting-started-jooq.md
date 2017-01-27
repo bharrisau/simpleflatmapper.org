@@ -4,6 +4,7 @@ title: Getting Started jOOQ
 short_title: jOOQ
 category: getting_started
 module: jooq
+description: SimpleFlatMapper java jooq RecordMapper deep object
 ---
 # Getting Started jOOQ
 

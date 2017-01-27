@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Peformance comparaison
+description: SimpleFlatMapper java library fast csv parser performance comparaison jackson-csv univocity
 ---
 [Benchmark Code](https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv)
 

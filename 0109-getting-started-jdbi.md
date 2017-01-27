@@ -4,6 +4,7 @@ title: Getting Started JDBI
 short_title: JDBI
 category: getting_started
 module: jdbi
+description: SimpleFlatMapper java jdbi ResultSetMapper mapper deep object
 ---
 # Getting Started JDBI
 

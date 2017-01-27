@@ -15,6 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: SimpleFlatMapper
 email: arnaud.roger@gmail.com
+author: Arnaud Roger
 baseurl: ""
 url: "http://simpleflatmapper.org"
 libraryVersion: "3.7"
@@ -26,3 +27,9 @@ theme: minima
 destination: ./docs
 
 exclude: [ src, target, Rakefile, pom.xml, Gemfile, Gemfile.lock, README.md ]
+
+twitter:
+  username: arnaudroger
+
+gems:
+  - jekyll-seo-tag

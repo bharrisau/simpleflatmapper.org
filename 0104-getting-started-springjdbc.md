@@ -4,6 +4,7 @@ title: Getting Started Spring Jdbc
 short_title: Spring Jdbc
 category: getting_started
 module: springjdbc
+description: SimpleFlatMapper java generic RowMapper deep object
 ---
 # Getting Started Spring jdbc
 

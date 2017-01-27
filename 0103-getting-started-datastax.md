@@ -4,6 +4,7 @@ title: Getting Started Cassandra Datastax
 short_title: Cassandra
 category: getting_started
 module: datastax
+description: SimpleFlatMapper java cassandra mapper and crud
 ---
 # Getting Started Cassandra
 

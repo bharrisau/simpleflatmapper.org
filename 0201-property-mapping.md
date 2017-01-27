@@ -3,6 +3,7 @@ layout: default
 title: Property Mapping
 short_title: Property Mapping
 category: docs
+description: SimpleFlatMapper java library property mapping rules
 ---
 
 

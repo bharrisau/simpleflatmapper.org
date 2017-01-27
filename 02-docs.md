@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Docs
+description: SimpleFlatMapper documentation
 ---
 
 # [Property Matching](0201-property-mapping.html)

@@ -4,6 +4,7 @@ title: Getting Started Excel spreadsheet
 short_title: Excel
 category: getting_started
 module: poi
+description: SimpleFlatMapper java excel mapper
 ---
 # Getting Started Excel POI
 
