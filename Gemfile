@@ -24,4 +24,5 @@ gem "minima"
 # end
 
 gem 'jekyll-seo-tag'
+gem 'jekyll-sitemap'
 
