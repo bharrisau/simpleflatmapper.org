@@ -5,9 +5,27 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 28 Jan 2017 16:16:52 +0000</pubDate>
-    <lastBuildDate>Sat, 28 Jan 2017 16:16:52 +0000</lastBuildDate>
+    <pubDate>Tue, 31 Jan 2017 21:17:30 +0000</pubDate>
+    <lastBuildDate>Tue, 31 Jan 2017 21:17:30 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.8</title>
+        <description>&lt;h1 id=&quot;v38&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.8&quot;&gt;V3.8&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/399&quot;&gt;399&lt;/a&gt; Join should not need to have a getter&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/398&quot;&gt;398&lt;/a&gt; Support Set&lt;T&gt; has property&lt;/T&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/397&quot;&gt;397&lt;/a&gt; csv mapper mapTo(Map.class)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/394&quot;&gt;394&lt;/a&gt; Jdbi v3&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 31 Jan 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/01/31/v3.8.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/01/31/v3.8.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.7</title>
