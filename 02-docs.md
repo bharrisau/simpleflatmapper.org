@@ -30,6 +30,7 @@ description: SimpleFlatMapper documentation
 {% include doc-table-row.md module='map' %}
 {% include doc-table-row.md module='reflect' %}
 {% include doc-table-row.md module='util' %}
+{% include doc-table-row.md module='converter-joda-time' %}
 
 
 
