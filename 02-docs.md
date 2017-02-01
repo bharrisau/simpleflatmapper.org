@@ -19,6 +19,8 @@ description: SimpleFlatMapper documentation
 {% include doc-table-row.md module='poi' gs='05' %}
 {% include doc-table-row.md module='querydsl' gs='07' %}
 {% include doc-table-row.md module='sql2o' gs='08' %}
+{% include doc-table-row.md module='jdbi' gs='09' %}
+{% include doc-table-row.md module='jdbi3' gs='10' %}
 
 # Libraries
 
