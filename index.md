@@ -15,7 +15,7 @@ SimpleFlatMapper [V{{ site.libraryVersion }}]({{ post.url }}) provides a very fa
 It integrates with 
  * [jOOQ](0106-getting-started-jooq.html)
  * [Spring Jdbc](0104-getting-started-springjdbc.html)
- * [JDBI ResultSetMapper and Binder](0109-getting-started-jdbi.html)
+ * [JDBI ResultSetMapper and Binder](0109-getting-started-jdbi.html), [JDBI3](0110-getting-started-jdbi3.html)
  * [Sql2o](0108-getting-started-sql2o.html)
  * [QueryDSL](0107-getting-started-querydsl.html)
  
