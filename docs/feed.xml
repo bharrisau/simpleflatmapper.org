@@ -5,9 +5,26 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 01 Feb 2017 14:52:35 +0000</pubDate>
-    <lastBuildDate>Wed, 01 Feb 2017 14:52:35 +0000</lastBuildDate>
+    <pubDate>Sat, 04 Feb 2017 10:01:22 +0000</pubDate>
+    <lastBuildDate>Sat, 04 Feb 2017 10:01:22 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.9</title>
+        <description>&lt;h1 id=&quot;v39&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.9&quot;&gt;V3.9&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/402&quot;&gt;402&lt;/a&gt; Fix array of primitives&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/401&quot;&gt;401&lt;/a&gt; Support Collection, Iterable&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/400&quot;&gt;400&lt;/a&gt; unwrap getter in BiInstantiator asm&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/02/04/v3.9.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/04/v3.9.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.8</title>
