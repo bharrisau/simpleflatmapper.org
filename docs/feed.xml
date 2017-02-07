@@ -5,9 +5,24 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 04 Feb 2017 10:03:52 +0000</pubDate>
-    <lastBuildDate>Sat, 04 Feb 2017 10:03:52 +0000</lastBuildDate>
+    <pubDate>Tue, 07 Feb 2017 21:40:10 +0000</pubDate>
+    <lastBuildDate>Tue, 07 Feb 2017 21:40:10 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.9.1</title>
+        <description>&lt;h1 id=&quot;v391&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.9.1&quot;&gt;V3.9.1&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/403&quot;&gt;403&lt;/a&gt; Constructor injection failed to match constructor runnin in debug mode/&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/02/07/v3.9.1.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/07/v3.9.1.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.9</title>
@@ -169,39 +184,6 @@ only one cell ‘cell1”,cell2’&lt;/p&gt;
         <pubDate>Thu, 27 Oct 2016 00:00:00 +0100</pubDate>
         <link>http://simpleflatmapper.org/2016/10/27/v3.1.html</link>
         <guid isPermaLink="true">http://simpleflatmapper.org/2016/10/27/v3.1.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Release v3.0</title>
-        <description>&lt;h1 id=&quot;how-to-migrate-to-v30&quot;&gt;&lt;a href=&quot;/11-v3-migration.html&quot;&gt;How to Migrate to v3.0&lt;/a&gt;&lt;/h1&gt;
-
-&lt;h1 id=&quot;v30-mains-was-to-prepare-for-java-9-jigsaw&quot;&gt;V3.0 mains was to prepare for java 9 jigsaw.&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;rename package to follow domain name org.sfm -&amp;gt; org.simpleflatmapper&lt;/li&gt;
-  &lt;li&gt;split modules csv parser is in sfm-csv amd jdbc mapper in sfm-jdbc&lt;/li&gt;
-  &lt;li&gt;add jdk9ea jars with module info&lt;/li&gt;
-  &lt;li&gt;use service loader for extension&lt;/li&gt;
-  &lt;li&gt;joda time needs the converter-joda-time to work&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;a-few-designed-issue-have-been-also-addressed&quot;&gt;a few designed issue have been also addressed&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;define a collector service that is used across the board, and allows extension&lt;/li&gt;
-  &lt;li&gt;remove the DirectClassMeta hack&lt;/li&gt;
-  &lt;li&gt;remove jdk7 binary as jdk6 is the same&lt;/li&gt;
-  &lt;li&gt;embedded asm in renamed package&lt;/li&gt;
-  &lt;li&gt;library updates&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;…&lt;/p&gt;
-</description>
-        <pubDate>Sat, 01 Oct 2016 00:00:00 +0100</pubDate>
-        <link>http://simpleflatmapper.org/2016/10/01/v3.0.html</link>
-        <guid isPermaLink="true">http://simpleflatmapper.org/2016/10/01/v3.0.html</guid>
         
         
       </item>
