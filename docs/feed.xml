@@ -5,16 +5,32 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Feb 2017 16:19:22 +0000</pubDate>
-    <lastBuildDate>Wed, 08 Feb 2017 16:19:22 +0000</lastBuildDate>
+    <pubDate>Wed, 08 Feb 2017 23:03:46 +0000</pubDate>
+    <lastBuildDate>Wed, 08 Feb 2017 23:03:46 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Release v3.10</title>
+        <description>&lt;h1 id=&quot;v310&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.10&quot;&gt;V3.10&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/407&quot;&gt;407&lt;/a&gt; CsvMapper join returns null on Iterator&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/405&quot;&gt;405&lt;/a&gt; join object in list should create new entry for each row of no key specified&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/02/08/v3.10.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/08/v3.10.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.9.1</title>
         <description>&lt;h1 id=&quot;v391&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.9.1&quot;&gt;V3.9.1&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/403&quot;&gt;403&lt;/a&gt; Constructor injection failed to match constructor runnin in debug mode/&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/403&quot;&gt;403&lt;/a&gt; Constructor injection failed to match constructor running in debug mode&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Tue, 07 Feb 2017 00:00:00 +0000</pubDate>
@@ -169,21 +185,6 @@ exclude objenesis.&lt;/p&gt;
         <pubDate>Wed, 09 Nov 2016 00:00:00 +0000</pubDate>
         <link>http://simpleflatmapper.org/2016/11/09/v3.2.html</link>
         <guid isPermaLink="true">http://simpleflatmapper.org/2016/11/09/v3.2.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Release v3.1</title>
-        <description>&lt;h1 id=&quot;v31&quot;&gt;V3.1&lt;/h1&gt;
-
-&lt;p&gt;fix issue &lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/353&quot;&gt;353&lt;/a&gt; when reading invalid
-csv like ‘cell1”,cell2’ it should see it as 2 cells ‘cell1”’ and ‘cell2’ but was generating
-only one cell ‘cell1”,cell2’&lt;/p&gt;
-</description>
-        <pubDate>Thu, 27 Oct 2016 00:00:00 +0100</pubDate>
-        <link>http://simpleflatmapper.org/2016/10/27/v3.1.html</link>
-        <guid isPermaLink="true">http://simpleflatmapper.org/2016/10/27/v3.1.html</guid>
         
         
       </item>
