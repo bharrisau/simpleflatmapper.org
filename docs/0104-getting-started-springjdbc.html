@@ -232,6 +232,19 @@
     <span class="nt">&lt;classifier&gt;</span>jdk9ea<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
 
+<h1 id="why-not-beanpropertyrowmapper">Why Not BeanPropertyRowMapper?</h1>
+
+<p>First the performance of BeanPropertyRowMapper is <a href="https://github.com/arnaudroger/SimpleFlatMapper/wiki/Jdbc-Performance-Local-Mysql">abysmal</a>, as it says in the <a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/BeanPropertyRowMapper.html">doc</a>
+it’s not made for that. This modules offer performance very close to a manually written RowMapper - it could even be faster as 
+name access to column is more expensive than by index.</p>
+
+<p>Second SimpleFlatMapper support constructor injection, factory method, deep object etc…</p>
+
+<p>Third it also supports SqlParameterSource, and Crud operations.</p>
+
+<p>You might also have a look at <a href="http://serkan-ozal.github.io/spring-jdbc-roma/">Spring-JDBC-ROMA</a> that also creates
+RowMapper.</p>
+
 <h1 id="rowmapper">RowMapper</h1>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">MyDao</span> <span class="o">{</span>
