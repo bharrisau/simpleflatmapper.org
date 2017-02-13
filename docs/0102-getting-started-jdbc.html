@@ -97,7 +97,7 @@
                 
                 
                 
-                <a class="page-link" href="/12-csv-performance.html">Peformance comparaison</a>
+                <a class="page-link" href="/12-csv-performance.html">Performance comparison</a>
                 
                 
                 
@@ -204,7 +204,7 @@
 
 <p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-jdbc%7C3.10%7C">Dependency</a> to your build.</p>
 
-<p>for Maven :</p>
+<p>for Maven:</p>
 
 <h3 id="java-8">Java 8</h3>
 
@@ -236,7 +236,7 @@
 
 <p>All you need to do is instantiate a mapper via the JdbcMapperFactory. 
 The JdbcMapper should be instantiated only once as it does a lot of reflection work on instantiation. 
-It is thread safe and can be called from multiple thread without synchronisation.</p>
+It is thread-safe and can be called from multiple threads without synchronisation.</p>
 
 <h3 id="dynamic-mapping">Dynamic Mapping</h3>
 
@@ -287,10 +287,10 @@ It is thread safe and can be called from multiple thread without synchronisation
 
 <h3 id="cleanup-resources">Cleanup resources</h3>
 
-<p>The mapper does not close the result set, it is still you responsibility to close the used resource.</p>
+<p>The mapper does not close the result set, it is still your responsibility to close the used resource.</p>
 
 <h3 id="error-handling">Error handling</h3>
-<p>By default if an exception is thrown during the building of the mapper, the mapping or the for each loop the error is rethrown it is possible to provide your own handler error that will override that behaviour.</p>
+<p>By default, if an exception is thrown during the building of the mapper, the mapping or the for each loop the error is rethrown. It is possible to provide your own handler error that will override that behaviour.</p>
 
 <h4 id="field-mapping-error">Field Mapping Error</h4>
 
@@ -366,8 +366,8 @@ You will need to provide</p>
 
 <h2 id="namedquery">NamedQuery</h2>
 
-<p>Because there are now available name from the PreparedStatement parameter metadata we can only builder a PreparedStatement mapper manually by adding the column name in order.
-The NamedQuery is there to solve that by using named parameter - ::name in place of ? -. If the ? placeholder is used then it will try to extrapolate the name, that should works find for insert and updates. But it’s not guarantee to work perfectly on complex select query for which it’s better to used name parameter.</p>
+<p>Because there are no available names from the PreparedStatement parameter metadata we can only builder a PreparedStatement mapper manually by adding the column name in order.
+The NamedQuery is there to solve that by using named parameter - ::name in place of ? -. If the ? placeholder is used then it will try to extrapolate the name, that should work fine for inserts and updates. But it’s not guaranteed to work perfectly on a complex select query for which it’s better to used name parameter.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">NamedSqlQuery</span> <span class="c1">// 1 =&gt; id</span>
     <span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">"select id, name, email, creation_time, type_ordinal, type_name "</span>
@@ -381,7 +381,7 @@ The NamedQuery is there to solve that by using named parameter - ::name in place
 
 <p>The QueryPreparer is created from a NamedQuery. 
 It is important to note that there now type information available when creating the preparer. For most 
-mapping it is not an issue but for some like Enum it will matter.
+mapping, it is not an issue but for some like Enum it will matter.
 You can specify the type in the mapper factory by adding a SqlTypeColumnProperty</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapperFactory</span>

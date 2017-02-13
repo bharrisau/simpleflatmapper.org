@@ -12,13 +12,13 @@ description: SimpleFlatMapper java generic RowMapper deep object
 
 # Why Not BeanPropertyRowMapper?
 
-First the performance of BeanPropertyRowMapper is [abysmal](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Jdbc-Performance-Local-Mysql), as it says in the [doc](http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/BeanPropertyRowMapper.html)
-it's not made for that. This modules offer performance very close to a manually written RowMapper - it could even be faster as 
-name access to column is more expensive than by index.
+First, the performance of BeanPropertyRowMapper is [abysmal](https://github.com/arnaudroger/SimpleFlatMapper/wiki/Jdbc-Performance-Local-Mysql), as it says in the [doc](http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/BeanPropertyRowMapper.html)
+it's not made for that. This module offers performance very close to a manually written RowMapper - it could even be faster as 
+name access to a column is more expensive than by index.
 
 Second SimpleFlatMapper support constructor injection, factory method, deep object etc...
 
-Third it also supports SqlParameterSource, and Crud operations.
+Third, it also supports SqlParameterSource, and Crud operations.
 
 You might also have a look at [Spring-JDBC-ROMA](http://serkan-ozal.github.io/spring-jdbc-roma/) that also creates
 RowMapper.

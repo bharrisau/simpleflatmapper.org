@@ -27,14 +27,14 @@ The mapper [supports](0201-property-mapping.html)
  * List, Array and Map
  
 No annotation, no configuration needed. 
-Default behavior can be changed programmatically.
-You can also extends the type mapping by providing [converters](0202-converters.html)
+The default behaviour can be changed programmatically.
+You can also extend the type mapping by providing [converters](0202-converters.html)
 
-The csv module also provides one of the [fastest java csv parser](12-csv-performance.html).
+The csv module also provides one of the [fastest java csv parsers](12-csv-performance.html).
 
 It can all run on java 6, 7, 8 and 9.
 
-Some sample code :
+Some sample code:
 
 # Csv Mapper
 {% highlight java %}

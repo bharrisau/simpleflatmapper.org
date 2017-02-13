@@ -13,7 +13,7 @@ description: SimpleFlatMapper java jdbi ResultSetMapper mapper deep object
 
 ## Register SfmResultSetMapperFactory
 
-You can register sfm as a ResultSetMapperFactory, then using the mapTo - in place of map - it will 
+You can register sfm as a ResultSetMapperFactory, then use the mapTo - in place of map - it will 
 JDBI will look for a registered Factory and is the SFM one is the only or first one it will use it
 to map the object.
 

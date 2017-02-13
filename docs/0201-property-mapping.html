@@ -97,7 +97,7 @@
                 
                 
                 
-                <a class="page-link" href="/12-csv-performance.html">Peformance comparaison</a>
+                <a class="page-link" href="/12-csv-performance.html">Performance comparison</a>
                 
                 
                 
@@ -126,13 +126,13 @@
     <div class="wrapper">
         <h1 id="the-rules">The rules</h1>
 
-<p>The property finder will look for a column to property match first, if none is found it will try to do a partial match on the property to look for a sub property.</p>
+<p>The property finder will look for a column to property match first if none is found it will try to do a partial match on the property to look for a sub-property.</p>
 
 <h2 id="property-name-matching">property name matching</h2>
 
-<p>is a case insensitive match ignoring ‘_’ and ‘ ‘.</p>
+<p>is a case-insensitive match ignoring ‘_’ and ‘ ‘.</p>
 
-<p>the following column will matches the property myProperty.</p>
+<p>the following column will match the property myProperty.</p>
 
 <ul>
   <li>‘my_property’</li>
@@ -155,8 +155,8 @@ The finder will try to match the start of the column to a property of the object
 
 <h2 id="listarray">list/array</h2>
 
-<p>if the type of the object is a array or a list then the finder will look for the first number in the column and use at as the index to put the element in.
-if there is a subproperty specify after the number that will be match against the element class. If not it will look for a 1 argument constructor.</p>
+<p>if the type of the object is an array or a list then the finder will look for the first number in the column and use at as the index to put the element in.
+if there is a sub-property specify after the number that will be matched against the element class. If not it will look for a 1 argument constructor.</p>
 
 <ul>
   <li>List<String> myList, 'my_list_3' -&gt; will match against the 3rd element of the list as a String.</String></li>
@@ -169,7 +169,7 @@ if there is a subproperty specify after the number that will be match against th
 
 <h2 id="index-discovery">index discovery</h2>
 
-<p>If no index is found it will try to find a empty index where the element has not been injected the property yet.</p>
+<p>If no index is found it will try to find an empty index where the element has not been injected the property yet.</p>
 
 <p>ie</p>
 
@@ -191,14 +191,14 @@ if there is a subproperty specify after the number that will be match against th
   <span class="n">Optional</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">name</span><span class="o">;</span>
 <span class="o">}</span></code></pre></figure>
 
-<p>if name is null it will create a empty optional.</p>
+<p>if the name is null it will create an empty optional.</p>
 
 <h1 id="injection">Injection</h1>
-<p>The property mapping will look for a injection vector in the following order</p>
+<p>The property mapping will look for an injection vector in the following order</p>
 
 <h2 id="constructorfactory-method-injection">Constructor/Factory method Injection</h2>
 <h3 id="factory-method">Factory method</h3>
-<p>Sfm looks for static method for which the return type is that same as the expected type.</p>
+<p>Sfm looks for a static method for which the returns type is that same as the expected type.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
    <span class="kd">public</span> <span class="kd">static</span> <span class="n">MyClass</span> <span class="nf">of</span><span class="o">(</span><span class="n">String</span> <span class="n">val</span><span class="o">,</span> <span class="kt">int</span> <span class="n">index</span><span class="o">)</span> <span class="o">{</span>
@@ -209,7 +209,7 @@ if there is a subproperty specify after the number that will be match against th
 <h2 id="setter-injection">Setter Injection</h2>
 <h2 id="field-injection">Field Injection</h2>
 <h2 id="builder-pattern">Builder Pattern</h2>
-<p>Sfm will look for a static method that return a type that will return the builder. A builder needs to have a method that instantiate the targeted class and have a setter method that modify the builder or return a new version of the builder.</p>
+<p>Sfm will look for a static method that return a type that will return the builder. A builder needs to have a method that instantiates the targeted class and have a setter method that modifies the builder or return a new version of the builder.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">MyClass</span> <span class="o">{</span>
    <span class="kd">public</span> <span class="kd">static</span> <span class="n">MyClassBuilder</span> <span class="n">builder</span> <span class="o">{</span>
@@ -231,7 +231,7 @@ if there is a subproperty specify after the number that will be match against th
         <span class="n">IClassBuilder</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getConstructor</span><span class="o">()));</span></code></pre></figure>
 
 <h2 id="finals">finals</h2>
-<p>final field semantic is respected. The constructor injection will need the asm library to extract the name of the parameters from the debug symbol. If not present then it falls on more expensive strategy on injecting a value through a the constructor and looking for a getter that returns the same value.</p>
+<p>final field semantic is respected. The constructor injection will need the asm library to extract the name of the parameters from the debug symbol. If not present then it falls on more expensive strategy on injecting a value through the constructor and looking for a getter that returns the same value.</p>
 
 <h1 id="customise-the-property-matching">Customise the property matching</h1>
 

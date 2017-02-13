@@ -8,7 +8,7 @@ description: SimpleFlatMapper java library converters
 
 When mapping a property sfm will looking for a getter/setter from the object
 to the source/target flat structure - ResultSet, Csv Row, etc ...-. If it can't find 
-one it will then look for a Converter that get transform to a supported type.
+one it will then look for a Converter that gets transform to a supported type.
 
 the default converter or in 
 

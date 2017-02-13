@@ -97,7 +97,7 @@
                 
                 
                 
-                <a class="page-link" href="/12-csv-performance.html">Peformance comparaison</a>
+                <a class="page-link" href="/12-csv-performance.html">Performance comparison</a>
                 
                 
                 
@@ -204,7 +204,7 @@
 
 <p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-jooq%7C3.10%7C">Dependency</a> to your build.</p>
 
-<p>for Maven :</p>
+<p>for Maven:</p>
 
 <h3 id="java-8">Java 8</h3>
 
@@ -239,7 +239,7 @@
   <li>the fetchInto(Class) method that will call the jOOQ mapper or a third party mapper specified in the configuration.</li>
 </ul>
 
-<p>because fetchInto has to go through the Record creation, its use will mainly be when your query does not map to an generated object - ie sub set of field, joins -.</p>
+<p>because fetchInto has to go through the Record creation, its use will mainly be when your query does not map to a generated object - i.e. a subset of fields or joins -.</p>
 
 <h1 id="sfm-as-a-recordmapperprovider">SFM as a RecordMapperProvider</h1>
 
@@ -249,11 +249,11 @@
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">configuration</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="k">new</span> <span class="n">SfmRecordMapperProvider</span><span class="o">()));</span></code></pre></figure>
 
-<p>when instantiating your DSL. You will then be able use fetchInto with a cost very close to fetching the record - see the performance section - and the flexibility that SFM offers.</p>
+<p>when instantiating your DSL. You will then be able to use fetchInto with a cost very close to fetching the record - see the performance section - and the flexibility that SFM offers.</p>
 
 <h1 id="sfm-on-the-resultset">SFM on the ResultSet</h1>
 
-<p>Because the RecordMapperProvider works on the record that we don’t need we are not as performant as working directly with the ResultSet. Fortunately jOOQ allows you to fetch the ResultSet directly avoiding the cost of the transition form ResultSet to Record.</p>
+<p>Because the RecordMapperProvider works on the record that we don’t need we are not as performant as working directly with the ResultSet. Fortunately, jOOQ allows you to fetch the ResultSet directly avoiding the cost of the transition from ResultSet to Record.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">JdbcMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="n">JdbcMapperFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">().</span><span class="na">newMapper</span><span class="o">(</span><span class="n">MyObject</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
 

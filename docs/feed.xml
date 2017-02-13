@@ -5,8 +5,8 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Feb 2017 21:48:59 +0000</pubDate>
-    <lastBuildDate>Mon, 13 Feb 2017 21:48:59 +0000</lastBuildDate>
+    <pubDate>Mon, 13 Feb 2017 22:33:13 +0000</pubDate>
+    <lastBuildDate>Mon, 13 Feb 2017 22:33:13 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -114,7 +114,7 @@
         <title>Release v3.5</title>
         <description>&lt;h1 id=&quot;v35&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.5&quot;&gt;V3.5&lt;/a&gt;&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://simpleflatmapper.org/12-csv-performance.html&quot;&gt;Updated performance comparaison&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://simpleflatmapper.org/12-csv-performance.html&quot;&gt;Updated performance comparison&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/380&quot;&gt;380&lt;/a&gt; Fix issue if yaml comment contains a ,” with no closing “&lt;/li&gt;
@@ -136,7 +136,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/370&quot;&gt;370&lt;/a&gt; csv parser perf optimisation see &lt;a href=&quot;https://github.com/arnaudroger/mapping-benchmark/blob/master/sfm-csv/jmh-result-3.4.csv&quot;&gt;benchmark&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/365&quot;&gt;365&lt;/a&gt; support setter on target object and getter on source for non existing properties&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/365&quot;&gt;365&lt;/a&gt; support setter on target object and getter on source for non-existing properties&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/361&quot;&gt;361&lt;/a&gt; add where support for JdbcTemplateCrud&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -168,7 +168,7 @@
     
       <item>
         <title>Release v3.2</title>
-        <description>&lt;p&gt;An objenesis dependency was introduce with the wrong scope, upgrade to 3.3 or 
+        <description>&lt;p&gt;An objenesis dependency was introduced with the wrong scope, upgrade to 3.3 or 
 exclude objenesis.&lt;/p&gt;
 
 &lt;h1 id=&quot;v32&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.2&quot;&gt;V3.2&lt;/a&gt;&lt;/h1&gt;

@@ -97,7 +97,7 @@
                 
                 
                 
-                <a class="page-link" href="/12-csv-performance.html">Peformance comparaison</a>
+                <a class="page-link" href="/12-csv-performance.html">Performance comparison</a>
                 
                 
                 
@@ -204,7 +204,7 @@
 
 <p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-csv%7C3.10%7C">Dependency</a> to your build.</p>
 
-<p>for Maven :</p>
+<p>for Maven:</p>
 
 <h3 id="java-8">Java 8</h3>
 
@@ -234,9 +234,9 @@
 
 <h1 id="reading-a-csv-file">Reading a csv file</h1>
 
-<p>The <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-csv/3.10/index.html?org/simpleflatmapper/csv/CsvParser.html">CsvParser</a> api allows you to read from a File, a Reader or a CharSequence
-via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.10/index.html?org/simpleflatmapper/util/CheckedConsumer.html">CheckedConsumer</a> callback, 
-a Iterator or a Stream of String[]</p>
+<p>The <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-csv/3.10/index.html?org/simpleflatmapper/csv/CsvParser.html"><code class="highlighter-rouge">CsvParser</code></a> api allows you to read from a <code class="highlighter-rouge">File</code>, a <code class="highlighter-rouge">Reader</code> or a <code class="highlighter-rouge">CharSequence</code>
+via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.10/index.html?org/simpleflatmapper/util/CheckedConsumer.html"><code class="highlighter-rouge">CheckedConsumer</code></a> callback, 
+an <code class="highlighter-rouge">Iterator</code> or a <code class="highlighter-rouge">Stream</code> of <code class="highlighter-rouge">String[]</code></p>
 
 <p><a href="https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/test/samples/GettingStartedCsv_csvParser.java">Source</a></p>
 
@@ -258,9 +258,9 @@ a Iterator or a Stream of String[]</p>
 
 <h2 id="mapping-a-csv-to-an-object">Mapping a csv to an object</h2>
 
-<p>You can also ask the row to be map to an object. You can then read the csv from a File, a Reader 
-or a CharSequence via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.10/index.html?org/simpleflatmapper/util/CheckedConsumer.html">CheckedConsumer</a> callback, 
-a Iterator or a Stream of your type.
+<p>You can also ask the row to be mapped to an object. You can then read the csv from a <code class="highlighter-rouge">File</code>, a <code class="highlighter-rouge">Reader</code> 
+or a <code class="highlighter-rouge">CharSequence</code> via a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-util/3.10/index.html?org/simpleflatmapper/util/CheckedConsumer.html">CheckedConsumer</a> callback, 
+an <code class="highlighter-rouge">Iterator</code> or a <code class="highlighter-rouge">Stream</code> of your type.
 The mapper will use the header row - the first one - to match against the property of the object. You can also specify the headers
 manually if there none or if you want to skip them.</p>
 
@@ -316,10 +316,10 @@ better to specify the headers manually.</p>
     <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
 
-<h1 id="writing-with-header-not-matching-the-property-name">writing with header not matching the property name</h1>
+<h1 id="writing-with-headers-not-matching-the-property-name">writing with headers not matching the property name</h1>
 
-<p>if you want to use a header that does not match the name of the property
-for example I need the email header to be contact you will need to 
+<p>if you want to use a header that does not match the name of the property,
+for example, if you need the email header to be “contact” you will need to 
 add an alias by adding RenameProperty on the column.</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="c1">// better to cache the dsl with the from </span>

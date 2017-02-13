@@ -97,7 +97,7 @@
                 
                 
                 
-                <a class="page-link" href="/12-csv-performance.html">Peformance comparaison</a>
+                <a class="page-link" href="/12-csv-performance.html">Performance comparison</a>
                 
                 
                 
@@ -204,7 +204,7 @@
 
 <p>Add the <a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-springjdbc%7C3.10%7C">Dependency</a> to your build.</p>
 
-<p>for Maven :</p>
+<p>for Maven:</p>
 
 <h3 id="java-8">Java 8</h3>
 
@@ -234,13 +234,13 @@
 
 <h1 id="why-not-beanpropertyrowmapper">Why Not BeanPropertyRowMapper?</h1>
 
-<p>First the performance of BeanPropertyRowMapper is <a href="https://github.com/arnaudroger/SimpleFlatMapper/wiki/Jdbc-Performance-Local-Mysql">abysmal</a>, as it says in the <a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/BeanPropertyRowMapper.html">doc</a>
-it’s not made for that. This modules offer performance very close to a manually written RowMapper - it could even be faster as 
-name access to column is more expensive than by index.</p>
+<p>First, the performance of BeanPropertyRowMapper is <a href="https://github.com/arnaudroger/SimpleFlatMapper/wiki/Jdbc-Performance-Local-Mysql">abysmal</a>, as it says in the <a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/BeanPropertyRowMapper.html">doc</a>
+it’s not made for that. This module offers performance very close to a manually written RowMapper - it could even be faster as 
+name access to a column is more expensive than by index.</p>
 
 <p>Second SimpleFlatMapper support constructor injection, factory method, deep object etc…</p>
 
-<p>Third it also supports SqlParameterSource, and Crud operations.</p>
+<p>Third, it also supports SqlParameterSource, and Crud operations.</p>
 
 <p>You might also have a look at <a href="http://serkan-ozal.github.io/spring-jdbc-roma/">Spring-JDBC-ROMA</a> that also creates
 RowMapper.</p>

@@ -9,13 +9,13 @@ description: SimpleFlatMapper java library property mapping rules
 
 # The rules
 
-The property finder will look for a column to property match first, if none is found it will try to do a partial match on the property to look for a sub property.
+The property finder will look for a column to property match first if none is found it will try to do a partial match on the property to look for a sub-property.
 
 ## property name matching
 
-is a case insensitive match ignoring '_' and ' '.
+is a case-insensitive match ignoring '_' and ' '.
 
-the following column will matches the property myProperty.
+the following column will match the property myProperty.
 
 * 'my_property'
 * 'myproperty'
@@ -34,8 +34,8 @@ for a property property.subProperty the following will match
 
 ## list/array
 
-if the type of the object is a array or a list then the finder will look for the first number in the column and use at as the index to put the element in.
-if there is a subproperty specify after the number that will be match against the element class. If not it will look for a 1 argument constructor.
+if the type of the object is an array or a list then the finder will look for the first number in the column and use at as the index to put the element in.
+if there is a sub-property specify after the number that will be matched against the element class. If not it will look for a 1 argument constructor.
 
 * List<String> myList, 'my_list_3' -> will match against the 3rd element of the list as a String.
 * List<MyObject> myList, 'my_list_3_id' -> will match against property id of the 3rd element of the list.
@@ -46,7 +46,7 @@ Tuples work in the same way as list/array but the size is limited and the types 
 
 ## index discovery
 
-If no index is found it will try to find a empty index where the element has not been injected the property yet.
+If no index is found it will try to find an empty index where the element has not been injected the property yet.
 
 ie
 
@@ -68,14 +68,14 @@ class MyObject {
 }
 {% endhighlight %}
 
-if name is null it will create a empty optional.
+if the name is null it will create an empty optional.
 
 # Injection 
-The property mapping will look for a injection vector in the following order
+The property mapping will look for an injection vector in the following order
 
 ## Constructor/Factory method Injection
 ### Factory method
-Sfm looks for static method for which the return type is that same as the expected type.
+Sfm looks for a static method for which the returns type is that same as the expected type.
 
 {% highlight java %}
 class MyClass {
@@ -88,7 +88,7 @@ class MyClass {
 ## Setter Injection
 ## Field Injection
 ## Builder Pattern
-Sfm will look for a static method that return a type that will return the builder. A builder needs to have a method that instantiate the targeted class and have a setter method that modify the builder or return a new version of the builder.
+Sfm will look for a static method that return a type that will return the builder. A builder needs to have a method that instantiates the targeted class and have a setter method that modifies the builder or return a new version of the builder.
 
 {% highlight java %}
 class MyClass {
@@ -114,7 +114,7 @@ mapperFactory.newMapper(
 {% endhighlight %}
 
 ## finals 
-final field semantic is respected. The constructor injection will need the asm library to extract the name of the parameters from the debug symbol. If not present then it falls on more expensive strategy on injecting a value through a the constructor and looking for a getter that returns the same value.
+final field semantic is respected. The constructor injection will need the asm library to extract the name of the parameters from the debug symbol. If not present then it falls on more expensive strategy on injecting a value through the constructor and looking for a getter that returns the same value.
 
 # Customise the property matching
 

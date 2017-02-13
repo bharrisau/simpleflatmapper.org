@@ -15,7 +15,7 @@ description: SimpleFlatMapper java micro orm jdbc ResultSet mapper
 
 All you need to do is instantiate a mapper via the JdbcMapperFactory. 
 The JdbcMapper should be instantiated only once as it does a lot of reflection work on instantiation. 
-It is thread safe and can be called from multiple thread without synchronisation.
+It is thread-safe and can be called from multiple threads without synchronisation.
 
 
 ### Dynamic Mapping
@@ -77,10 +77,10 @@ JdbcMapper<MyObject> staticMapper =
 
 ### Cleanup resources
 
-The mapper does not close the result set, it is still you responsibility to close the used resource.
+The mapper does not close the result set, it is still your responsibility to close the used resource.
 
 ### Error handling
-By default if an exception is thrown during the building of the mapper, the mapping or the for each loop the error is rethrown it is possible to provide your own handler error that will override that behaviour.
+By default, if an exception is thrown during the building of the mapper, the mapping or the for each loop the error is rethrown. It is possible to provide your own handler error that will override that behaviour.
 
 #### Field Mapping Error
 
@@ -169,8 +169,8 @@ see [CrudTest](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-j
 
 ## NamedQuery
 
-Because there are now available name from the PreparedStatement parameter metadata we can only builder a PreparedStatement mapper manually by adding the column name in order.
-The NamedQuery is there to solve that by using named parameter - ::name in place of ? -. If the ? placeholder is used then it will try to extrapolate the name, that should works find for insert and updates. But it's not guarantee to work perfectly on complex select query for which it's better to used name parameter.
+Because there are no available names from the PreparedStatement parameter metadata we can only builder a PreparedStatement mapper manually by adding the column name in order.
+The NamedQuery is there to solve that by using named parameter - ::name in place of ? -. If the ? placeholder is used then it will try to extrapolate the name, that should work fine for inserts and updates. But it's not guaranteed to work perfectly on a complex select query for which it's better to used name parameter.
 
 
 {% highlight java %}
@@ -187,7 +187,7 @@ NamedSqlQuery // 1 => id, 2 => name, 3 => email, 4 => creation_time, 5 => type_o
 
 The QueryPreparer is created from a NamedQuery. 
 It is important to note that there now type information available when creating the preparer. For most 
-mapping it is not an issue but for some like Enum it will matter.
+mapping, it is not an issue but for some like Enum it will matter.
 You can specify the type in the mapper factory by adding a SqlTypeColumnProperty
 {% highlight java %}
 JdbcMapperFactory

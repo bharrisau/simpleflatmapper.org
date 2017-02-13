@@ -13,9 +13,9 @@ description: SimpleFlatMapper java Csv Parser Csv Mapper
 
 # Reading a csv file
 
-The [CsvParser](http://static.javadoc.io/org.simpleflatmapper/sfm-csv/{% include currentversion.html %}/index.html?org/simpleflatmapper/csv/CsvParser.html) api allows you to read from a File, a Reader or a CharSequence
-via a [CheckedConsumer](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/CheckedConsumer.html) callback, 
-a Iterator or a Stream of String[]
+The [`CsvParser`](http://static.javadoc.io/org.simpleflatmapper/sfm-csv/{% include currentversion.html %}/index.html?org/simpleflatmapper/csv/CsvParser.html) api allows you to read from a `File`, a `Reader` or a `CharSequence`
+via a [`CheckedConsumer`](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/CheckedConsumer.html) callback, 
+an `Iterator` or a `Stream` of `String[]`
 
 [Source](https://github.com/arnaudroger/SimpleFlatMapper/blob/master/sfm-csv/src/test/java/org/simpleflatmapper/csv/test/samples/GettingStartedCsv_csvParser.java)
 {% highlight java%}
@@ -38,9 +38,9 @@ try (Stream<String[]> stream = CsvParser.stream(file)) {
 
 ## Mapping a csv to an object
 
-You can also ask the row to be map to an object. You can then read the csv from a File, a Reader 
-or a CharSequence via a [CheckedConsumer](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/CheckedConsumer.html) callback, 
-a Iterator or a Stream of your type.
+You can also ask the row to be mapped to an object. You can then read the csv from a `File`, a `Reader` 
+or a `CharSequence` via a [CheckedConsumer](http://static.javadoc.io/org.simpleflatmapper/sfm-util/{% include currentversion.html %}/index.html?org/simpleflatmapper/util/CheckedConsumer.html) callback, 
+an `Iterator` or a `Stream` of your type.
 The mapper will use the header row - the first one - to match against the property of the object. You can also specify the headers
 manually if there none or if you want to skip them.
 
@@ -99,10 +99,10 @@ public void writeCsv(Collection<MyObject> objects, File file)
 }
 {% endhighlight %}
 
-# writing with header not matching the property name
+# writing with headers not matching the property name
 
-if you want to use a header that does not match the name of the property
-for example I need the email header to be contact you will need to 
+if you want to use a header that does not match the name of the property,
+for example, if you need the email header to be "contact" you will need to 
 add an alias by adding RenameProperty on the column.
 
 {% highlight java%}

@@ -6,7 +6,7 @@
 
 Add the [Dependency](http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-{{page.module}}%7C{% include currentversion.html %}%7C) to your build.
  
-for Maven :
+for Maven:
 
 ### Java 8
 {% highlight xml %}
