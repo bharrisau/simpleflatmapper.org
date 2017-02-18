@@ -195,7 +195,20 @@
 
 <main class="page-content" aria-label="Content">
     <div class="wrapper">
-        <h1 id="getting-started-spring-jdbc">Getting Started Spring jdbc</h1>
+        <h1 id="why-not-beanpropertyrowmapper">Why Not BeanPropertyRowMapper?</h1>
+
+<p>First, the performance of BeanPropertyRowMapper is <a href="https://github.com/arnaudroger/SimpleFlatMapper/wiki/Jdbc-Performance-Local-Mysql">abysmal</a>, as it says in the <a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/BeanPropertyRowMapper.html">doc</a>
+it’s not made for that. This module offers performance very close to a manually written RowMapper - it could even be faster as 
+name access to a column is more expensive than by index.</p>
+
+<p>Second SimpleFlatMapper support constructor injection, factory method, deep object etc…</p>
+
+<p>Third, it also supports SqlParameterSource, and Crud operations.</p>
+
+<p>You might also have a look at <a href="http://serkan-ozal.github.io/spring-jdbc-roma/">Spring-JDBC-ROMA</a> that also creates
+RowMapper.</p>
+
+<h1 id="getting-started-spring-jdbc">Getting Started Spring jdbc</h1>
 
 <p><a href="http://search.maven.org/#artifactdetails%7Corg.simpleflatmapper%7Csfm-springjdbc%7C3.10%7C"><img src="https://img.shields.io/maven-central/v/org.simpleflatmapper/sfm-springjdbc.svg" alt="Maven Central" /></a>
 <a href="http://www.javadoc.io/doc/org.simpleflatmapper/sfm-springjdbc"><img src="https://img.shields.io/badge/javadoc-3.10-blue.svg" alt="JavaDoc" /></a></p>
@@ -231,19 +244,6 @@
     <span class="nt">&lt;version&gt;</span>3.10<span class="nt">&lt;/version&gt;</span>
     <span class="nt">&lt;classifier&gt;</span>jdk9ea<span class="nt">&lt;/classifier&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span></code></pre></figure>
-
-<h1 id="why-not-beanpropertyrowmapper">Why Not BeanPropertyRowMapper?</h1>
-
-<p>First, the performance of BeanPropertyRowMapper is <a href="https://github.com/arnaudroger/SimpleFlatMapper/wiki/Jdbc-Performance-Local-Mysql">abysmal</a>, as it says in the <a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/BeanPropertyRowMapper.html">doc</a>
-it’s not made for that. This module offers performance very close to a manually written RowMapper - it could even be faster as 
-name access to a column is more expensive than by index.</p>
-
-<p>Second SimpleFlatMapper support constructor injection, factory method, deep object etc…</p>
-
-<p>Third, it also supports SqlParameterSource, and Crud operations.</p>
-
-<p>You might also have a look at <a href="http://serkan-ozal.github.io/spring-jdbc-roma/">Spring-JDBC-ROMA</a> that also creates
-RowMapper.</p>
 
 <h1 id="rowmapper">RowMapper</h1>
 

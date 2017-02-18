@@ -6,9 +6,6 @@ category: getting_started
 module: springjdbc
 description: SimpleFlatMapper java generic RowMapper deep object
 ---
-# Getting Started Spring jdbc
-
-{% include maven_dependency.md %}
 
 # Why Not BeanPropertyRowMapper?
 
@@ -22,6 +19,10 @@ Third, it also supports SqlParameterSource, and Crud operations.
 
 You might also have a look at [Spring-JDBC-ROMA](http://serkan-ozal.github.io/spring-jdbc-roma/) that also creates
 RowMapper.
+
+# Getting Started Spring jdbc
+
+{% include maven_dependency.md %}
 
 # RowMapper
 
