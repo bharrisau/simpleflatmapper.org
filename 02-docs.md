@@ -51,4 +51,19 @@ description: SimpleFlatMapper documentation
  
 
 
- 
+# Spring boot issue 1.4.3
+
+Tomcat embedded [See](https://github.com/grails/grails-data-mapping/issues/845) broke the service loaders. upgrade to last spring boot or move to jetty.
+
+```java
+2017-02-21 16:35:31.564 ERROR [http-nio-8080-exec-9] [] [dispatcherServlet]: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed; nested exception is java.lang.NoClassDefFoundError: Could not initia
+java.lang.NoClassDefFoundError: Could not initialize class org.simpleflatmapper.converter.ConverterService
+        at org.simpleflatmapper.map.mapper.ConstantSourceMapperBuilder.<init>(ConstantSourceMapperBuilder.java:91)
+        at org.simpleflatmapper.map.mapper.ConstantSourceMapperBuilder.<init>(ConstantSourceMapperBuilder.java:79)
+
+...
+2017-02-21 16:19:37.308 ERROR [http-nio-8080-exec-10] [] [dispatcherServlet]: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Handler dispatch failed; nested exception is java.util.ServiceConfigurationError: org.simple
+        java.io.FileNotFoundException: JAR entry !/META-INF/services/org.simpleflatmapper.converter.ConverterFactoryProducer not found in /tmp/jar_cache2379861323892080478.tmp
+
+
+```

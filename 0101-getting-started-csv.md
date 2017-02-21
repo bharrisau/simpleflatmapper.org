@@ -7,6 +7,17 @@ module: csv
 description: SimpleFlatMapper java Csv Parser Csv Mapper
 ---
 
+# Why?
+
+Are you looking for a very [performant](http://simpleflatmapper.org/12-csv-performance.html) Csv Parser, 
+or even better an easy to use CsvMapper? 
+
+sfm-csv provides the most [flexible](0201-property-mapping.html) CsvMapper available. 
+It supports Constructor injection, Factory method, Builder Pattern... The new java8 time API, the old joda time API.
+Inner object mapping, join mapping.
+ 
+Give it a try.
+ 
 # Getting Started Csv
 
 {% include maven_dependency.md %}
