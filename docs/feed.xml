@@ -5,8 +5,8 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Feb 2017 21:24:14 +0000</pubDate>
-    <lastBuildDate>Thu, 23 Feb 2017 21:24:14 +0000</lastBuildDate>
+    <pubDate>Thu, 23 Feb 2017 21:26:10 +0000</pubDate>
+    <lastBuildDate>Thu, 23 Feb 2017 21:26:10 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -15,7 +15,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/410&quot;&gt;410&lt;/a&gt; simplified jigsaw module name see &lt;a href=&quot;http://mail.openjdk.java.net/pipermail/jpms-spec-experts/2017-February/000582.html&quot;&gt;Justification&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/409&quot;&gt;409&lt;/a&gt; support unlimited number of join on all but csv, remove need for order on non root object see &lt;a href=&quot;/0202-joins.html&quot;&gt;docs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/409&quot;&gt;409&lt;/a&gt; support unlimited number of join on all but csv, remove need for order on non root object see &lt;a href=&quot;0202-joins.html&quot;&gt;docs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/408&quot;&gt;408&lt;/a&gt; add support for @Key annotation&lt;/li&gt;
 &lt;/ul&gt;
 </description>
