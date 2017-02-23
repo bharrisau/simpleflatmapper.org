@@ -4,10 +4,12 @@ title: Docs
 description: SimpleFlatMapper documentation
 ---
 
-# [Property Matching](0201-property-mapping.html)
+## [Property Matching](0201-property-mapping.html)
+## [Converters](0202-converters.html)
+## [Joins](0203-joins.html)
 
-# [Converters](0202-converters.html)
-# Mappers
+# modules
+## Mappers
 
 | Module | Maven | Javadoc |
 |----|---:|---:|
@@ -22,7 +24,7 @@ description: SimpleFlatMapper documentation
 {% include doc-table-row.md module='jdbi' gs='09' %}
 {% include doc-table-row.md module='jdbi3' gs='10' %}
 
-# Libraries
+## Libraries
 
 |Module|Maven|Javadoc|
 |----|---|---|
@@ -31,7 +33,6 @@ description: SimpleFlatMapper documentation
 {% include doc-table-row.md module='reflect' %}
 {% include doc-table-row.md module='util' %}
 {% include doc-table-row.md module='converter-joda-time' %}
-
 
 # Google Groups
  
@@ -48,10 +49,10 @@ description: SimpleFlatMapper documentation
       + '&showsearch=true&showpopout=true&showtabs=false'
       + '&parenturl=' + encodeURIComponent(window.location.href);
  </script> 
- 
 
+# Known issues
 
-# Spring boot issue 1.4.3
+## Spring boot issue 1.4.3
 
 Tomcat embedded [See](https://github.com/grails/grails-data-mapping/issues/845) broke the service loaders. upgrade to last spring boot or move to jetty.
 
