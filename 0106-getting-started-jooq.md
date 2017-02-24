@@ -43,3 +43,7 @@ try (ResultSet rs = query.fetchResultSet()) {
 {% endhighlight %}
 
 That will allow you to get the query generation power of jOOQ and the close to pure Jdbc performance of SimpleFlatMapper.
+
+# Joins
+
+The join aggregation is only available when using SFM on the result set as the RecordMapper interface expect one object per row. 
