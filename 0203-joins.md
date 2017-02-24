@@ -79,4 +79,4 @@ class Toy {
 }
 ```
 
-The join support might be limited third party framework integration, check the specific docs for more detail.
+The join support might be limited third party framework integration if it expect one object per row, check the specific docs for more detail.

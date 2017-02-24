@@ -154,10 +154,10 @@ one it will then look for a Converter that gets transform to a supported type.</
   </tbody>
 </table>
 
-<p>you can also provide your converters easily. The converter are registered using the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html">ServiceLoader</a></p>
+<p>you can also provide your converters easily. The converter are registered using the <a href="https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html"><code class="highlighter-rouge">ServiceLoader</code></a></p>
 
 <ol>
-  <li>Create a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-converter/3.7/index.html?org/simpleflatmapper/converter/ConverterFactoryProducer.html">org.simpleflatmapper.converter.ConverterFactoryProducer</a>
+  <li>Create a <a href="http://static.javadoc.io/org.simpleflatmapper/sfm-converter/3.7/index.html?org/simpleflatmapper/converter/ConverterFactoryProducer.html"><code class="highlighter-rouge">org.simpleflatmapper.converter.ConverterFactoryProducer</code></a>
     <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyConverterFactoryProducer</span> <span class="kd">extends</span> <span class="n">AbstractConverterFactoryProducer</span> <span class="o">{</span>
 
  <span class="nd">@Override</span>
@@ -168,7 +168,7 @@ one it will then look for a Converter that gets transform to a supported type.</
 </code></pre>
     </div>
   </li>
-  <li>register the service in the META-INF/services/org.simpleflatmapper.converter.ConverterFactoryProducer file
+  <li>register the service in the <code class="highlighter-rouge">META-INF/services/org.simpleflatmapper.converter.ConverterFactoryProducer file</code>
     <div class="highlighter-rouge"><pre class="highlight"><code>mypackage.MyConverterFactoryProducer
 </code></pre>
     </div>

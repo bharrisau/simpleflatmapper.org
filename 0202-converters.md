@@ -20,9 +20,9 @@ the joda time one in
 {% include doc-table-row.md module='converter-joda-time' %}
 
 
-you can also provide your converters easily. The converter are registered using the [ServiceLoader](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
+you can also provide your converters easily. The converter are registered using the [`ServiceLoader`](https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html)
 
-1. Create a [org.simpleflatmapper.converter.ConverterFactoryProducer](http://static.javadoc.io/org.simpleflatmapper/sfm-converter/3.7/index.html?org/simpleflatmapper/converter/ConverterFactoryProducer.html)
+1. Create a [`org.simpleflatmapper.converter.ConverterFactoryProducer`](http://static.javadoc.io/org.simpleflatmapper/sfm-converter/3.7/index.html?org/simpleflatmapper/converter/ConverterFactoryProducer.html)
 ```java
 public class MyConverterFactoryProducer extends AbstractConverterFactoryProducer {
 
@@ -32,7 +32,7 @@ public class MyConverterFactoryProducer extends AbstractConverterFactoryProducer
     }
 }
 ```
-2. register the service in the META-INF/services/org.simpleflatmapper.converter.ConverterFactoryProducer file
+2. register the service in the `META-INF/services/org.simpleflatmapper.converter.ConverterFactoryProducer file`
 ```
 mypackage.MyConverterFactoryProducer
 ```
