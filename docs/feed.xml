@@ -5,9 +5,25 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 27 Feb 2017 10:05:30 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Feb 2017 10:05:30 +0000</lastBuildDate>
+    <pubDate>Mon, 27 Feb 2017 10:07:35 +0000</pubDate>
+    <lastBuildDate>Mon, 27 Feb 2017 10:07:35 +0000</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Release v3.11</title>
+        <description>&lt;h1 id=&quot;v3111&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.11.1&quot;&gt;V3.11.1&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/414&quot;&gt;414&lt;/a&gt; simplify breal cache clearing&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/413&quot;&gt;413&lt;/a&gt; use custom linear probing map for storing object&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/02/27/v3.11.1.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/27/v3.11.1.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.11</title>
@@ -22,22 +38,6 @@
         <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
         <link>http://simpleflatmapper.org/2017/02/23/v3.11.html</link>
         <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/23/v3.11.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Release v3.11</title>
-        <description>&lt;h1 id=&quot;v3111&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.11.1&quot;&gt;V3.11.1&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/414&quot;&gt;414&lt;/a&gt; simplify breal cache clearing&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/413&quot;&gt;413&lt;/a&gt; use custom linear probing map for storing object&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
-        <link>http://simpleflatmapper.org/2017/02/23/v3.11.1.html</link>
-        <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/23/v3.11.1.html</guid>
         
         
       </item>
