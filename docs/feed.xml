@@ -5,8 +5,8 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 02 Mar 2017 07:23:13 +0000</pubDate>
-    <lastBuildDate>Thu, 02 Mar 2017 07:23:13 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Mar 2017 07:24:45 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Mar 2017 07:24:45 +0000</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
     
       <item>
@@ -14,8 +14,8 @@
         <description>&lt;h1 id=&quot;v3112&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.11.2&quot;&gt;V3.11.2&lt;/a&gt;&lt;/h1&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/418&quot;&gt;418&lt;/a&gt; Tuple2&amp;lt;A, List&lt;b&gt;&amp;gt;, second id mapping does not match B&lt;/b&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/417&quot;&gt;417&lt;/a&gt; Tuple2&amp;lt;A, List&lt;b&gt;&amp;gt; should use A keys as keys even on non root object&lt;/b&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/418&quot;&gt;418&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Tuple2&amp;lt;A, List&amp;lt;B&amp;gt;&amp;gt;&lt;/code&gt; second id mapping does not match B&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/417&quot;&gt;417&lt;/a&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;Tuple2&amp;lt;A, List&amp;lt;B&amp;gt;&amp;gt;&lt;/code&gt; should use A keys as keys even on non root object&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/416&quot;&gt;416&lt;/a&gt; Constructor filtering lost if in Tuple, List, Map&lt;/li&gt;
 &lt;/ul&gt;
 </description>
