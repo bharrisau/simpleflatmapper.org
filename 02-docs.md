@@ -8,6 +8,10 @@ description: SimpleFlatMapper documentation
 ## [Converters](0202-converters.html)
 ## [Joins](0203-joins.html)
 
+# Blog entry
+* [Filling the one-to-many, many-to-many jOOQ mapping gap](https://arnaudroger.github.io/blog/2017/02/27/jooq-one-to-many.html)
+* [jOOQ DTO-less one-to-many](https://arnaudroger.github.io/blog/2017/03/02/jooq-one-to-many-without-dto.html)
+
 # modules
 ## Mappers
 
