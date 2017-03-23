@@ -5,9 +5,26 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 18 Mar 2017 21:30:12 +0000</pubDate>
-    <lastBuildDate>Sat, 18 Mar 2017 21:30:12 +0000</lastBuildDate>
+    <pubDate>Thu, 23 Mar 2017 07:07:37 +0000</pubDate>
+    <lastBuildDate>Thu, 23 Mar 2017 07:07:37 +0000</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Release v3.11.5</title>
+        <description>&lt;h1 id=&quot;v3115&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.11.5&quot;&gt;V3.11.5&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/431&quot;&gt;427&lt;/a&gt; Collection mapping index column limit to next delimiter, so that foos_foo_bar4 maps to foos[].foo.bar4 not foos[4]&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/425&quot;&gt;425&lt;/a&gt; CsvParser uses FileChannel instead of FileInputStream&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/03/16/v3.11.5.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/03/16/v3.11.5.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.11.4</title>
@@ -163,22 +180,6 @@
         <pubDate>Tue, 31 Jan 2017 00:00:00 +0000</pubDate>
         <link>http://simpleflatmapper.org/2017/01/31/v3.8.html</link>
         <guid isPermaLink="true">http://simpleflatmapper.org/2017/01/31/v3.8.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Release v3.7</title>
-        <description>&lt;h1 id=&quot;v37&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.7&quot;&gt;V3.7&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/391&quot;&gt;391&lt;/a&gt; JDBI integration&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/390&quot;&gt;390&lt;/a&gt; Crud select should not use * but list the column&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 03 Jan 2017 00:00:00 +0000</pubDate>
-        <link>http://simpleflatmapper.org/2017/01/03/v3.7.html</link>
-        <guid isPermaLink="true">http://simpleflatmapper.org/2017/01/03/v3.7.html</guid>
         
         
       </item>
