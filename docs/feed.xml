@@ -5,9 +5,26 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 23 Mar 2017 07:07:37 +0000</pubDate>
-    <lastBuildDate>Thu, 23 Mar 2017 07:07:37 +0000</lastBuildDate>
+    <pubDate>Thu, 30 Mar 2017 10:30:50 +0100</pubDate>
+    <lastBuildDate>Thu, 30 Mar 2017 10:30:50 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Release v3.11.6</title>
+        <description>&lt;h1 id=&quot;v3116&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.11.6&quot;&gt;V3.11.6&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/433&quot;&gt;433&lt;/a&gt; Support for BigDecimal/BigInteger&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/432&quot;&gt;432&lt;/a&gt; Improve error message when mapping fail due to getter&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
+        <link>http://simpleflatmapper.org/2017/03/16/v3.11.6.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/03/16/v3.11.6.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.11.5</title>
@@ -162,24 +179,6 @@
         <pubDate>Sat, 04 Feb 2017 00:00:00 +0000</pubDate>
         <link>http://simpleflatmapper.org/2017/02/04/v3.9.html</link>
         <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/04/v3.9.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Release v3.8</title>
-        <description>&lt;h1 id=&quot;v38&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.8&quot;&gt;V3.8&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/399&quot;&gt;399&lt;/a&gt; Join should not need to have a getter&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/398&quot;&gt;398&lt;/a&gt; Support Set&lt;T&gt; has property&lt;/T&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/397&quot;&gt;397&lt;/a&gt; csv mapper mapTo(Map.class)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/394&quot;&gt;394&lt;/a&gt; Jdbi v3&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 31 Jan 2017 00:00:00 +0000</pubDate>
-        <link>http://simpleflatmapper.org/2017/01/31/v3.8.html</link>
-        <guid isPermaLink="true">http://simpleflatmapper.org/2017/01/31/v3.8.html</guid>
         
         
       </item>
