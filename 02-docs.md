@@ -7,6 +7,7 @@ description: SimpleFlatMapper documentation
 ## [Property Matching](0201-property-mapping.html)
 ## [Converters](0202-converters.html)
 ## [Joins](0203-joins.html)
+## [Google Protocol Buffers](0204-protobuf.html)
 
 # Blog entry
 * [Filling the one-to-many, many-to-many jOOQ mapping gap](https://arnaudroger.github.io/blog/2017/02/27/jooq-one-to-many.html)

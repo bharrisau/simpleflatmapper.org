@@ -25,6 +25,7 @@ The mapper [supports](0201-property-mapping.html)
  * Deep object structure
  * Tuples including [jOOL](https://github.com/jOOQ/jOOL) tuples and [Fasttuple](https://github.com/boundary/fasttuple)
  * List, Array and Map
+ * [Google Protocol Buffers](0204-protobuf.html)
  
 No annotation, no configuration needed. 
 The default behaviour can be changed programmatically.
