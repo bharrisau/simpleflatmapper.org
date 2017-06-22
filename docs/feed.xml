@@ -5,9 +5,25 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 09 Jun 2017 21:41:22 +0100</pubDate>
-    <lastBuildDate>Fri, 09 Jun 2017 21:41:22 +0100</lastBuildDate>
+    <pubDate>Thu, 22 Jun 2017 22:31:01 +0100</pubDate>
+    <lastBuildDate>Thu, 22 Jun 2017 22:31:01 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Release v3.12.1</title>
+        <description>&lt;h1 id=&quot;v3121&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.12.1&quot;&gt;V3.12.1&lt;/a&gt;&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/449&quot;&gt;449&lt;/a&gt; Add CharSequence to boolean converter&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Thu, 22 Jun 2017 00:00:00 +0100</pubDate>
+        <link>http://simpleflatmapper.org/2017/06/22/v3.12.1.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/06/22/v3.12.1.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.12</title>
@@ -22,7 +38,7 @@
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.simpleflatmapper&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;sfm-converter-protobuf&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;3.12&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;3.12.1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -186,23 +202,6 @@
         <pubDate>Mon, 27 Feb 2017 00:00:00 +0000</pubDate>
         <link>http://simpleflatmapper.org/2017/02/27/v3.11.1.html</link>
         <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/27/v3.11.1.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Release v3.11</title>
-        <description>&lt;h1 id=&quot;v311&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.11&quot;&gt;V3.11&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/410&quot;&gt;410&lt;/a&gt; simplified jigsaw module name see &lt;a href=&quot;http://mail.openjdk.java.net/pipermail/jpms-spec-experts/2017-February/000582.html&quot;&gt;Justification&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/409&quot;&gt;409&lt;/a&gt; support unlimited number of join on all but csv, remove need for order on non root object see &lt;a href=&quot;/0203-joins.html&quot;&gt;docs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/408&quot;&gt;408&lt;/a&gt; add support for @Key annotation&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
-        <link>http://simpleflatmapper.org/2017/02/23/v3.11.html</link>
-        <guid isPermaLink="true">http://simpleflatmapper.org/2017/02/23/v3.11.html</guid>
         
         
       </item>
