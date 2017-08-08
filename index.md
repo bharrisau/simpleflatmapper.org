@@ -8,7 +8,7 @@ description: SimpleFlatMapper java library fast and simple mapping, micro orm, c
 SimpleFlatMapper [V{{ site.libraryVersion }}]({{ post.url }}) provides a very fast and easy to use mapper for
 
  * [Jdbc, aka micro ORM](0102-getting-started-jdbc.html) from ResultSet to PreparedStatement
- * [Csv Mapper](0101-getting-started-csv.html#mapping-a-csv-to-an-object) with its own [Csv Parser](reading-a-csv-file) 
+ * [Csv Mapper](0101-getting-started-csv.html#mapping-a-csv-to-an-object) with its own [Csv Parser](0101-getting-started-csv.html#reading-a-csv-file) 
  * [Excel spreadsheet](0105-getting-started-poi.html)
  * [Cassandra Datastax](0103-getting-started-datastax.html)
  
