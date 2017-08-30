@@ -21,6 +21,30 @@ the following column will match the property myProperty.
 * 'myproperty'
 * 'my property'
 
+## property name aliases
+
+If the name of the property does not match the column name it is possible to specify a alias for the property using the `addAlias` method on the `MapperFactory`.
+
+```java
+mapperFactory.addAlias("columnName", "actualPropertyName");
+
+```
+
+### JPA @Column annotation
+sfm also supports the JPA `@Column` annotation to map a property to a column.
+
+```java
+	@Column(name="id")
+	private long nothingToSeeHere;
+```
+
+the column `id` will map to the `nothingToSeeHere` property. 
+The annotation works on fields, getters and setters.
+
+### Datastax @Column annotation
+
+the sfm-datastax module provides the same functionality for the datastax @Column annotation.
+
 ## inner object matching
 
 the inner object matching is done if the complete matching did not found any property.

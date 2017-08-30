@@ -26,6 +26,7 @@ The mapper [supports](0201-property-mapping.html)
  * Tuples including [jOOL](https://github.com/jOOQ/jOOL) tuples and [Fasttuple](https://github.com/boundary/fasttuple)
  * List, Array and Map
  * [Google Protocol Buffers](0204-protobuf.html)
+ * [JPA @Column](0201-property-mapping.html#jpa-column-annotation) and [Datastax @Column](0201-property-mapping.html#datastax-column-annotation)
  
 No annotation, no configuration needed. 
 The default behaviour can be changed programmatically.
