@@ -154,6 +154,27 @@
   <li>‘my property’</li>
 </ul>
 
+<h2 id="property-name-aliases">property name aliases</h2>
+
+<p>If the name of the property does not match the column name it is possible to specify a alias for the property using the <code class="highlighter-rouge">addAlias</code> method on the <code class="highlighter-rouge">MapperFactory</code>.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">mapperFactory</span><span class="o">.</span><span class="na">addAlias</span><span class="o">(</span><span class="s">"columnName"</span><span class="o">,</span> <span class="s">"actualPropertyName"</span><span class="o">);</span>
+
+</code></pre>
+</div>
+
+<h3 id="jpa-column-annotation">JPA @Column annotation</h3>
+<p>sfm also supports the JPA <code class="highlighter-rouge">@Column</code> annotation to map a property to a column.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>	<span class="nd">@Column</span><span class="o">(</span><span class="n">name</span><span class="o">=</span><span class="s">"id"</span><span class="o">)</span>
+	<span class="kd">private</span> <span class="kt">long</span> <span class="n">nothingToSeeHere</span><span class="o">;</span>
+</code></pre>
+</div>
+
+<h3 id="datastax-column-annotation">Datastax @Column annotation</h3>
+
+<p>the sfm-datastax module provides the same functionality for the datastax @Column annotation.</p>
+
 <h2 id="inner-object-matching">inner object matching</h2>
 
 <p>the inner object matching is done if the complete matching did not found any property.
