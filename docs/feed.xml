@@ -5,9 +5,29 @@
     <description></description>
     <link>http://simpleflatmapper.org/</link>
     <atom:link href="http://simpleflatmapper.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Aug 2017 16:47:10 +0100</pubDate>
-    <lastBuildDate>Wed, 30 Aug 2017 16:47:10 +0100</lastBuildDate>
+    <pubDate>Mon, 18 Sep 2017 20:41:59 +0100</pubDate>
+    <lastBuildDate>Mon, 18 Sep 2017 20:41:59 +0100</lastBuildDate>
     <generator>Jekyll v3.4.0</generator>
+    
+      <item>
+        <title>Release v3.13.2</title>
+        <description>&lt;h1 id=&quot;v3132&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.13.2&quot;&gt;V3.13.2&lt;/a&gt;&lt;/h1&gt;
+
+&lt;p&gt;Fix java 9 build, 3.13.1 version is the same but the sonatype released failed for java 6 and java 9 due to a behavior change once the java 8 stage repositories was released.
+There are no functionality change.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/455&quot;&gt;455&lt;/a&gt; add automatic module name for uses of java 8 jar with jigsaw modules&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/456&quot;&gt;456&lt;/a&gt; library dependency updates&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sat, 16 Sep 2017 00:00:00 +0100</pubDate>
+        <link>http://simpleflatmapper.org/2017/09/16/v3.13.2.html</link>
+        <guid isPermaLink="true">http://simpleflatmapper.org/2017/09/16/v3.13.2.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Release v3.13</title>
@@ -87,7 +107,7 @@
 &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupId&amp;gt;&lt;/span&gt;org.simpleflatmapper&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupId&amp;gt;&lt;/span&gt;
         &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactId&amp;gt;&lt;/span&gt;sfm-converter-protobuf&lt;span class=&quot;nt&quot;&gt;&amp;lt;/artifactId&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;3.13&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;3.13.2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -202,22 +222,6 @@
         <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
         <link>http://simpleflatmapper.org/2017/03/18/v3.11.4.html</link>
         <guid isPermaLink="true">http://simpleflatmapper.org/2017/03/18/v3.11.4.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Release v3.11.3</title>
-        <description>&lt;h1 id=&quot;v3113&quot;&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues?q=milestone%3A3.11.3&quot;&gt;V3.11.3&lt;/a&gt;&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/arnaudroger/SimpleFlatMapper/issues/426&quot;&gt;426&lt;/a&gt; Possibility to mark a column as auto generated, usefull for Oracle default to seq.nextvalue&lt;/li&gt;
-&lt;/ul&gt;
-
-</description>
-        <pubDate>Thu, 16 Mar 2017 00:00:00 +0000</pubDate>
-        <link>http://simpleflatmapper.org/2017/03/16/v3.11.3.html</link>
-        <guid isPermaLink="true">http://simpleflatmapper.org/2017/03/16/v3.11.3.html</guid>
         
         
       </item>
